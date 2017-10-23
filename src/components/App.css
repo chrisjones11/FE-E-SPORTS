@@ -1,0 +1,20 @@
+.navigation {
+    background-color: red;
+}
+
+.newsgame {
+    background-color: green;
+}
+
+.betslip {
+    background-color: blue;
+}
+
+.unplaced-bet {
+    background-color: yellow;
+}
+
+.stake {
+    width: 80px;
+    text-align: center;
+}
