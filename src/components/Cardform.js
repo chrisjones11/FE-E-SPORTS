@@ -1,6 +1,13 @@
 import React from 'react';
 
-class UnplacedBets extends React.Component {
+class Cardform extends React.Component {
+    constructor(props){
+        super(props);
+this.state ={
+    number :''
+}
+        }
+    
   render () {
     return (
       <div>
@@ -44,4 +51,4 @@ class UnplacedBets extends React.Component {
   }
 }
 
-export default UnplacedBets;
+export default Cardform;

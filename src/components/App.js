@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css'
 import Betslip from './Betslip'
+import Game from './Game';
 
 class App extends React.Component {
   render () {
@@ -11,7 +12,7 @@ class App extends React.Component {
         </div>
         <div className="content row">
           <div className="newsgame col-9">
-            <h1>This is where the content will live</h1>
+         <Game />
             <p>Start working from <code>/src/components/App.js</code></p>
           </div>
           <div className="betslip col-3">

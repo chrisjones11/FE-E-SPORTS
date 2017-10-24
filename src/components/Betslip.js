@@ -1,5 +1,7 @@
 import React from 'react';
-import UnplacedBets from './UnplacedBets'
+import Cardform from './Cardform'
+
+
 
 class Betslip extends React.Component {
     render () {
@@ -14,7 +16,7 @@ class Betslip extends React.Component {
               
             <div className="col-12">
                      {/* MAP FUNCTION */}
-                    <UnplacedBets />
+                    <Cardform />
                  {/* END OF MAP FUNCTION */}
                 <div className="row">
                     <div className="col-12">

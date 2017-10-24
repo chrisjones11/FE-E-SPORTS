@@ -3,7 +3,8 @@
 }
 
 .newsgame {
-    background-color: green;
+    
+    margin:auto;  
 }
 
 .betslip {
@@ -17,4 +18,23 @@
 .stake {
     width: 80px;
     text-align: center;
+}
+.gametitleimgcontainer{
+   text-align: center
+    
+}
+.gametitleimg{
+
+  margin:auto;
+  width:800px;
+ 
+ 
+}
+.title{
+   
+    width:800px;
+    margin: auto;
+    text-align: center;
+    background-color: green; 
+   
 }
