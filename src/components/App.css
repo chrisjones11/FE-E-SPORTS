@@ -1,9 +1,17 @@
+.main{
+    background-color:white;
+}
+
+
+
 .navigation {
-    background-color: red;
+    background-color:#707070;
     z-index: 100;
     position: fixed;
     width: 100vw;
     font-family: 'Russo One', sans-serif;
+    color:white;
+    
     
 }
 
@@ -14,21 +22,38 @@
 .newsgame {
     
     margin:auto;  
-    margin-top: 15vh;
+    margin-top: 20vh;
 }
 
 .betslip-outer {
-    margin-top: 15vh;
+    margin-top: 20vh;
     position: relative;
+    font-family: 'Russo One', sans-serif;
+}
+.btn-placebet{
+    color:#ff5733;
+    background-color:white;
+
+}
+a.btn-placebet:hover{
+    color:#707070;
+}
+.sliptitle{
+    color:white; 
 }
 
 .betslip {
-    background-color: blue;
+    background-color:#f0f0f0;
     position: fixed;
+    
+}
+.slipheading{
+    background-color: #ff5733; 
+
 }
 
 .unplaced-bet {
-    background-color: yellow;
+    background-color: #b8b8b8;
 }
 
 .stake {
@@ -51,7 +76,9 @@
     width: 60vw;
     margin: auto;
     text-align: center;
-    background-color: green; 
+    background-color: #f0f0f0;
+    color:black;
+    font-family: 'Russo One', sans-serif;
    
 }
 
@@ -62,18 +89,32 @@
 }
 
 .logo {
-    width: 20vw;
+    width: 15vw;
+}
+.login{
+    text-align: center;
+    
 }
 
-.navbarlogin {
-    text-align: right;
-    padding-right: 50px;
-}
+.btn-work {
+     width:8vw;
+     height: 10vh;
+     margin: 0 auto;
+     padding: 0;
+     display: table-cell;
+     vertical-align: middle;
+     color:#ff5733;
+     background-color:white;
+     font-size: 25px;  
+ }
+  a.btn-work:hover{
+      color: #707070;
+  }
 
 .navbutton {
     font-size: 2vw;
 }
 
 .navblock {
-    margin-left: -50px;
+    margin-left: -200px;
 }

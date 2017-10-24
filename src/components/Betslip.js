@@ -8,8 +8,8 @@ class Betslip extends React.Component {
       return (
         <div>
           <div className="row">
-            <div className="col-12">
-                <h1>Betslip</h1>
+            <div className="col-12 slipheading">
+                <h1 className='sliptitle'>Betslip</h1>
             </div>
           </div>
           <div className="unplaced-bets row">
@@ -28,7 +28,7 @@ class Betslip extends React.Component {
                         <p>Remove All</p>
                     </div>
                     <div className="col-6">
-                        <h2>PLACE BET</h2>
+                    <a className="btn btn-default btn-placebet" href="#">Place Bet</a>
                     </div>
                 </div>
                 <div className="row">

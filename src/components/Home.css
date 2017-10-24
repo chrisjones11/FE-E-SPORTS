@@ -1,0 +1,40 @@
+.screening{
+  width: 60vw;
+  margin: auto;
+  text-align: center;
+  background-color: #707070;
+  color:black;
+  font-family: 'Russo One', sans-serif;
+
+}
+
+
+.gamedisplayheading{
+  width: 60vw;
+  margin: auto;
+  text-align: center;
+  background-color: #f0f0f0;
+  color:black;
+  font-family: 'Russo One', sans-serif;
+
+}
+.gamedisplay{
+  width: 60vw;
+  margin: auto;
+  text-align: center;
+  background-color: #707070;
+  color:black;
+  font-family: 'Russo One', sans-serif;
+
+}
+.upcomingimg1{
+  width:90%;
+}
+.imgrow1{
+
+}
+.upcomingimgcont{
+  margin:0px;
+  background-color: red;
+  padding: 0
+}
