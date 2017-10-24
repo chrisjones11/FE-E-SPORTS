@@ -4,10 +4,10 @@ import React from 'react';
 class Game extends React.Component {
   render() {
     return (
-      <div >
-        <div className="row title" >
+      <div className="title">
+        <div className="row " >
           <div className="col-sm-12">
-            <p>Team A v/s Team B </p>
+            <h1>Team A v/s Team B - NorthCoders Invitational </h1>
             <p>Go for a Bet!!!</p>
           </div>
         </div>
@@ -18,29 +18,54 @@ class Game extends React.Component {
         </div>
         <div className="row">
           < div className="col-sm-12">
-          <table>
+          <table className="oddstable">
   <tr>
-    <th>Result</th>
+    <th colspan="2">Result</th>
   </tr>
   <tr>
     <td>A  4/1</td>
     <td>B  6/1</td>
   </tr>
   <tr>
-  <th>Towers</th>
+  <th colspan="2">Towers</th>
   </tr>
   <tr>
     <td>A  2/1</td>
     <td>B  7/2</td>
   </tr>
   <tr>
-  <th>Barracks</th>
+  <th colspan="2">Barracks</th>
   </tr>
   <tr>
     <td>A  2/1</td>
     <td>B  7/2</td>
   </tr>
 </table>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
         </div>
         </div>
         </div>

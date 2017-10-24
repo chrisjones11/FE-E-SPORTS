@@ -1,14 +1,30 @@
 .navigation {
     background-color: red;
+    z-index: 100;
+    position: fixed;
+    width: 100vw;
+    font-family: 'Russo One', sans-serif;
+    
 }
+
+/* .content {
+    margin-top: 30px;
+} */
 
 .newsgame {
     
     margin:auto;  
+    margin-top: 15vh;
+}
+
+.betslip-outer {
+    margin-top: 15vh;
+    position: relative;
 }
 
 .betslip {
     background-color: blue;
+    position: fixed;
 }
 
 .unplaced-bet {
@@ -26,15 +42,38 @@
 .gametitleimg{
 
   margin:auto;
-  width:800px;
+  width:90%;
  
  
 }
 .title{
    
-    width:800px;
+    width: 60vw;
     margin: auto;
     text-align: center;
     background-color: green; 
    
+}
+
+.oddstable {
+    width: 90%;
+    margin: auto;
+    border: solid;
+}
+
+.logo {
+    width: 20vw;
+}
+
+.navbarlogin {
+    text-align: right;
+    padding-right: 50px;
+}
+
+.navbutton {
+    font-size: 2vw;
+}
+
+.navblock {
+    margin-left: -50px;
 }
