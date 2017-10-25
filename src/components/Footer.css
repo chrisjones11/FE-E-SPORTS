@@ -1,0 +1,19 @@
+.footerdiv{
+  background-color: #707070;
+  color: white;
+  height: 10vh;
+  font-family: 'Russo One', sans-serif;
+  
+
+}
+.instructions{
+  text-align: right;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+
+.copyrightcol {
+  margin-top: 20px;
+  margin-left: 20px;
+}

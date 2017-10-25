@@ -24,6 +24,7 @@ a.btn-placebet:hover{
 .betslip {
     background-color:#b8b8b8;
     text-align: center;
+    position: fixed;
     
 }
 .slipheading{

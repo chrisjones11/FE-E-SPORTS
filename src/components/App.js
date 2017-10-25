@@ -4,6 +4,7 @@ import Betslip from './Betslip'
 import Game from './Game';
 import Navbar from './Navbar';
 import Home from './Home';
+import Footer from './Footer';
 
 class App extends React.Component {
   render () {
@@ -27,6 +28,9 @@ class App extends React.Component {
               </div>
             </div>
           </div>
+        </div>
+        <div >
+          <Footer/>
         </div>
       </div>
       </div>
