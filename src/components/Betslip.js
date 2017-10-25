@@ -1,5 +1,6 @@
 import React from 'react';
 import Cardform from './Cardform'
+import './Betslip.css'
 
 
 

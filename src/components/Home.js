@@ -1,5 +1,6 @@
 import React from 'react';
-import './Home.css'
+import './Home.css';
+import LiveGame from './LiveGame';
 
 
 
@@ -30,9 +31,9 @@ class Home extends React.Component {
           </div>
        </div>
        <div className='row gamedisplay'>
-          <div className='col-sm-3'>
-            <p>match1</p>
-            </div>
+          <div className='col-sm-3 gamethumb'>
+              <LiveGame />
+          </div>
           <div className='col-sm-3'>
             <p>match2</p>
              </div>
@@ -45,7 +46,7 @@ class Home extends React.Component {
           </div>
         </div>
         <div className='row'>
-          <div className="col-sm-12">
+          <div className="col-sm-12 upcomingtitle">
             <p>Upcoming Tournments</p>
           </div>
           <div className="row">

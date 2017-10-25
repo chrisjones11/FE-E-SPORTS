@@ -1,4 +1,5 @@
 import React from 'react';
+import './Navbar.css';
 
 
 class Navbar extends React.Component {
@@ -22,9 +23,11 @@ class Navbar extends React.Component {
                     </div>
                     </div>
                 </div>
-                <div className="col-2 login">
-                    <a className="btn btn-default btn-work" href="#">Login</a>
-                    
+                <div className="col-1 signup">
+                    <a className="btn btn-default btn-work signinbtn" href="#">Sign Up</a>
+                </div>
+                <div className="col-1 login">
+                    <a className="btn btn-default btn-work signinbtn" href="#">Login</a>
                 </div>
             </nav>
             

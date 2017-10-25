@@ -16,7 +16,7 @@ class App extends React.Component {
         </div>
         <div className="content row">
           <div className="newsgame col-9">
-            <Home />
+            {<Home />}
          {/* <Game /> */}
             <p>Start working from <code>/src/components/App.js</code></p>
           </div>

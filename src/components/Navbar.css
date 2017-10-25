@@ -1,0 +1,48 @@
+.navigation {
+    background-color:#707070;
+    z-index: 100;
+    position: fixed;
+    width: 100vw;
+    font-family: 'Russo One', sans-serif;
+    color:white;
+    
+    
+}
+
+.logo {
+    width: 15vw;
+}
+.login{
+    text-align: center;
+    margin-left: -40px;
+    
+}
+
+.signup{
+    text-align: center;
+    margin-right: -40px;
+    
+}
+
+ .signinbtn {
+    width:10vw;
+    height: 6vh;
+    padding: 0;
+    display: table-cell;
+    vertical-align: middle;
+    color:#ff5733;
+    background-color:white;
+    font-size: 25px;  
+}
+
+  a.btn-work:hover{
+      color: #707070;
+  }
+
+.navbutton {
+    font-size: 2vw;
+}
+
+.navblock {
+    margin-left: -200px;
+}
