@@ -8,6 +8,13 @@
 
 }
 
+.slideshow {
+  height: auto;
+}
+
+.homeimg {
+  width: 100%
+}
 
 .gamedisplayheading{
   width: 60vw;
@@ -20,6 +27,7 @@
 }
 .gamedisplay{
   width: 60vw;
+  height: 100px;
   margin: auto;
   text-align: center;
   background-color: #707070;
@@ -28,13 +36,53 @@
 
 }
 .upcomingimg1{
-  width:90%;
+  width: 90%;
+  margin: 0;
+  padding: 0;
+  background-color:green;
+  
+  float: right;
+  
 }
+
+.upcomingimg2{
+  width: 90%;
+  margin: 0;
+  padding: 0;
+  background-color:green;
+  
+  float: left;
+  
+}
+
+.upcomingimg3{
+  width: 90%;
+  margin: 0;
+  padding: 0;
+  background-color:green;
+
+  
+}
+
 .imgrow1{
 
 }
 .upcomingimgcont{
   margin:0px;
   background-color: red;
-  padding: 0
+  padding: 0;
+  display:block;
+  font-size: 0px;
+}
+
+.upcomingtable {
+  background-color:green;
+  margin: 0;
+  padding: 0;
+  display:block;
+  font-size: 0px;
+}
+
+td {
+  font-size: 0px;
 }
