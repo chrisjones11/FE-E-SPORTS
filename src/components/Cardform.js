@@ -2,7 +2,7 @@ import React from 'react';
 
 class Cardform extends React.Component {
     constructor(props){
-        super(props);
+        super(props); 
 this.state ={
     number :''
 }
@@ -12,39 +12,39 @@ this.state ={
     return (
       <div>
         <div className="row unplaced-bet">
-        <div className="col-3">
-            <p>remove bet</p>
+        <div className="col-3 crossbtndiv">
+            <img className='crossbtn' src="http://res.cloudinary.com/diohwb5lp/image/upload/v1508943403/remove_blk_ss7nxx.png"/>
         </div>
-        <div className="col-6">
+        <div className="col-6 cardformdiv">
             <div className="row">
                 <div className="col-12">
-                    <p>Team/Person Name</p>
+                    <p>Team/Person Name:</p>
                 </div>
             </div>
         <div className="row">
             <div className="col-12">
-                <p>Betting Market</p>
+                <p>Betting Market:</p>
             </div>
         </div>
         <div className="row">
             <div className="col-12">
-                <p>Tournament/Comp Name</p>
+                <p>Tournament/Comp Name:</p>
             </div>
         </div>
         <div className="row">
-            <div className="col-6">
+            <div className="col-6 formdiv">
                 <form>
                  <input type="number" className="stake" placeholder="stake" ></input>
                 </form>   
             </div>
-            <div className="col-6">
-                <p>Return</p>
+            <div className="col-6 returndiv">
+                <p className='return'>Return:</p>
             </div>
         </div>
     </div>
-    <div className="col-3">
-        <p>ODDS</p>
-    </div>
+    {/* <div className="col-3 oddsdiv">
+        <p>ODDS:3/1</p>
+    </div> */}
     </div>
       </div>
     );

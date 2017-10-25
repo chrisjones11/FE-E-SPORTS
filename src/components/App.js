@@ -22,7 +22,7 @@ class App extends React.Component {
           </div>
           <div className="betslip-outer col-3">
             <div className='betslip row'>
-              <div className="col-12">
+              <div className="col-12 betmain">
               <Betslip />
               </div>
             </div>

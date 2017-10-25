@@ -22,8 +22,8 @@ a.btn-placebet:hover{
 }
 
 .betslip {
-    background-color:#f0f0f0;
-    position: fixed;
+    background-color:#b8b8b8;
+    text-align: center;
     
 }
 .slipheading{
@@ -38,4 +38,62 @@ a.btn-placebet:hover{
 .stake {
     width: 80px;
     text-align: center;
+}
+.activebet{
+ font-size: 20px;
+ margin-left: 80px;
+ margin-top: 10px;
+}
+.crossbtn{
+    width:30%;
+    margin-top: 10px;
+    margin-right: 35px;
+
+}
+.crossbtndiv{
+   padding: 0px;
+}
+.cardformdiv{
+    text-align:left;
+    margin-left: -50px;
+
+    
+}
+.cardformdiv p{
+ margin-bottom: 5px;
+
+    
+}
+.oddsdiv{
+text-align: right;
+font-size: 15px;
+
+}
+
+.return{
+    margin-left: 50px;
+}
+.returndiv{
+ padding: 0px;
+}
+.removeall{
+ 
+background-color:#f0f0f0;
+color: black;
+}
+
+a.removeall:hover{
+    color: #b8b8b8;
+}
+.removealldiv{
+    text-align: center;
+}
+.totalbetdiv{
+text-align: left;
+margin-top: 15px;
+font-size: 20px;
+   
+}
+.betmain{
+    box-shadow: -3px 3px 10px 5px #888888;
 }
