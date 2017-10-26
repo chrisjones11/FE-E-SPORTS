@@ -18,8 +18,8 @@ class Betslip extends React.Component {
             <div className="col-12 ">
                      {/* MAP FUNCTION */}
                     <Cardform />
-                    <Cardform />
-                    <Cardform />
+                    {/* <Cardform />
+                    <Cardform /> */}
                  {/* END OF MAP FUNCTION */}
                  </div>
                  </div>
