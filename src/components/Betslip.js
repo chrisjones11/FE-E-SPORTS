@@ -7,7 +7,7 @@ import './Betslip.css'
 class Betslip extends React.Component {
     render () {
       return (
-        <div>
+        <div className>
           <div className="row">
             <div className="col-12 slipheading">
                 <h1 className='sliptitle'>Betslip</h1>
@@ -15,29 +15,33 @@ class Betslip extends React.Component {
           </div>
           <div className="unplaced-bets row">
               
-            <div className="col-12">
+            <div className="col-12 ">
                      {/* MAP FUNCTION */}
                     <Cardform />
+                    <Cardform />
+                    <Cardform />
                  {/* END OF MAP FUNCTION */}
+                 </div>
+                 </div>
                 <div className="row">
-                    <div className="col-12">
-                        <h2>TOTAL BET     £5.00</h2>
+                    <div className="col-12 totalbetdiv">
+                        <p>TOTAL BET     £5.00</p>
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-6">
-                        <p>Remove All</p>
-                    </div>
+                    <div className="col-6 removealldiv">
+                    <a className="btn btn-default btn-work removeall" href="#">Remove All</a>
+                      </div>
                     <div className="col-6">
                     <a className="btn btn-default btn-placebet" href="#">Place Bet</a>
                     </div>
                 </div>
-                <div className="row">
-                    <h1>ACTIVE BETS</h1>
+                <div className="row activebetdiv ">
+                    <p className='activebet'>ACTIVE BETS</p>
                 </div>
             </div>
-          </div>
-        </div>
+        
+        
       );
     }
   }
