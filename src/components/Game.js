@@ -20,27 +20,29 @@ class Game extends React.Component {
         <div className="row">
           < div className="col-sm-12">
           <table className="oddstable">
+            <tbody>
   <tr>
-    <th colspan="2">Result</th>
+    <th colSpan="2">Result</th>
   </tr>
   <tr>
     <td>A  4/1</td>
     <td>B  6/1</td>
   </tr>
   <tr>
-  <th colspan="2">Towers</th>
+  <th colSpan="2">Towers</th>
   </tr>
   <tr>
     <td>A  2/1</td>
     <td>B  7/2</td>
   </tr>
   <tr>
-  <th colspan="2">Barracks</th>
+  <th colSpan="2">Barracks</th>
   </tr>
   <tr>
     <td>A  2/1</td>
     <td>B  7/2</td>
   </tr>
+  </tbody>
 </table>
 <br/>
 <br/>

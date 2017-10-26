@@ -1,6 +1,8 @@
 import React from 'react';
 import './Home.css';
 import LiveGame from './LiveGame';
+import {connect} from 'react-redux';
+
 
 
 
@@ -31,19 +33,17 @@ class Home extends React.Component {
           </div>
        </div>
        <div className='row gamedisplay'>
-          <div className='col-sm-3 gamethumb'>
-              <LiveGame />
-          </div>
-          <div className='col-sm-3'>
-            <p>match2</p>
-             </div>
-          <div className='col-sm-3'>
-            <p>match3</p>
-            </div>
-          <div className='col-sm-3'>
-            <p>match4</p>
-
-          </div>
+         
+            {this.props.home.games.map((game) => {
+              return (
+                <div className='col-sm-3 gamethumb'>
+                <div key={game.match_id}>
+                  <LiveGame thumbnail = {game.embedded_game} team_dire = {game.team_dire} team_radiant = {game.team_radiant} tournament_name={game.tournament_name}/>
+                </div>
+                </div>
+              ) 
+            })}
+            
         </div>
         <div className='row'>
           <div className="col-sm-12 upcomingtitle">
@@ -51,29 +51,31 @@ class Home extends React.Component {
           </div>
           <div className="row">
             <div className='col-12'>
-              <table classname="upcomingtable">
-                <tr classname="upcomingtable">
-                  <td classname="upcomingtable">
+              <table className="upcomingtable">
+                <tbody>
+                <tr className="upcomingtable">
+                  <td className="upcomingtable">
                   <img className="upcomingimg1" src='http://res.cloudinary.com/diohwb5lp/image/upload/v1508865956/dota_upm_n4cvol.jpg'/>
                   </td>
-                  <td classname="upcomingtable">
+                  <td className="upcomingtable">
                   <img className="upcomingimg3" src='http://res.cloudinary.com/diohwb5lp/image/upload/v1508865956/dota_upm_n4cvol.jpg'/>
                   </td>
-                  <td classname="upcomingtable">
+                  <td className="upcomingtable">
                   <img className="upcomingimg2" src='http://res.cloudinary.com/diohwb5lp/image/upload/v1508865956/dota_upm_n4cvol.jpg'/>
                   </td>
                 </tr>
-                <tr classname="upcomingtable">
-                  <td classname="upcomingtable">
+                <tr className="upcomingtable">
+                  <td className="upcomingtable">
                   <img className="upcomingimg1" src='http://res.cloudinary.com/diohwb5lp/image/upload/v1508865956/dota_upm_n4cvol.jpg'/>
                   </td>
-                  <td classname="upcomingtable">
+                  <td className="upcomingtable">
                   <img className="upcomingimg3" src='http://res.cloudinary.com/diohwb5lp/image/upload/v1508865956/dota_upm_n4cvol.jpg'/>
                   </td>
-                  <td classname="upcomingtable">
+                  <td className="upcomingtable">
                   <img className="upcomingimg2" src='http://res.cloudinary.com/diohwb5lp/image/upload/v1508865956/dota_upm_n4cvol.jpg'/>
                   </td>
                 </tr>
+                </tbody>
               </table>
             </div>
           </div>
@@ -88,4 +90,16 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+const mapStateToProps = state => ({
+  home: state.home.data,
+  loading: state.home.loading,
+  error: state.home.error
+});
+
+// const mapDispatchToProps = dispatch => ({
+//   fetchHome: () => {
+//     dispatch(fetchHome());
+//   }
+// })
+
+export default connect(mapStateToProps)(Home);

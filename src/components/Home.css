@@ -27,7 +27,7 @@
 }
 .gamedisplay{
   width: 60vw;
-  height: 100px;
+  height: 100%;
   margin: auto;
   text-align: center;
   background-color:#f0f0f0;
@@ -76,6 +76,7 @@
 }
 
 .upcomingtable {
+  width: 50px;
   background-color:green;
   margin: 0;
   padding: 0;

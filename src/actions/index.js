@@ -63,9 +63,18 @@ export const getGame = (data) => ({
     }
 });
 
-export const getMatchDetails = (matchId) => ({
+export const getMatchDetailsRequest = () => ({
+    type: types.GET_MATCH_DETAILS
+});
+
+export const getMatchDetailsSuccess = (matchId) => ({
     type: types.GET_MATCH_DETAILS,
     payload: matchId
+});
+
+export const getMatchDetailsFailure = (matchId) => ({
+    type: types.GET_MATCH_DETAILS,
+    payload: error
 });
 
 export const getUpcoming = (data) => ({
@@ -75,7 +84,7 @@ export const getUpcoming = (data) => ({
 
 export const getNewsStories = (data) => ({
     type: types.GET_NEWS_STORIES,
-    payload: []
+    payload: data
 });
 
 export const returnMoney = (data) => ({

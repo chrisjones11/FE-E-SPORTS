@@ -3,22 +3,27 @@ import './LiveGame.css';
 
 
 class LiveGame extends React.Component {
+    constructor(props) {
+        super(props)
+    }
+    
   render() {
+      console.log(this);
     return (
         <div>       
             <div className="row">
                 <div className="col-12">
-                    <img className="livethumbnail" src="https://i.ytimg.com/vi/5MuZmHEGqXQ/maxresdefault.jpg"></img>
+                <img className="livethumbnail" src="https://i.ytimg.com/vi/5MuZmHEGqXQ/maxresdefault.jpg"/>
                 </div>
             </div> 
             <div className="row">
                 <div className="col-12 smalltext">
-                    <p>Team A vs Team B</p>
+                    <p>{this.props.team_dire} vs {this.props.team_radiant}</p>
                 </div>
             </div> 
             <div className="row">
                 <div className="col-12 smalltext">
-                   <p>NorthCoders Invitational</p>
+                {this.props.tournament_name}
                 </div>
             </div>       
                
@@ -28,5 +33,11 @@ class LiveGame extends React.Component {
     )   
   }
 }
+
+const iframe = () =>{
+    return {
+      __html: this.props.thumbnail
+    }
+  }
 
 export default LiveGame;
