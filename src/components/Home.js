@@ -2,12 +2,16 @@ import React from 'react';
 import './Home.css';
 import LiveGame from './LiveGame';
 import {connect} from 'react-redux';
-
-
-
+import fetchHome from '../actions';
 
 
 class Home extends React.Component {
+  constructor(props){
+    super(props);
+  }
+  componentDidMount() {
+    this.props.fetchHome();
+  }
   render() {
     return (
       <div className='screening'>
@@ -96,10 +100,10 @@ const mapStateToProps = state => ({
   error: state.home.error
 });
 
-// const mapDispatchToProps = dispatch => ({
-//   fetchHome: () => {
-//     dispatch(fetchHome());
-//   }
-// })
+const mapDispatchToProps = dispatch => ({
+  fetchHome: () => {
+    dispatch(fetchHome());
+  }
+})
 
-export default connect(mapStateToProps)(Home);
+export default connect(mapStateToProps,mapDispatchToProps)(Home);
