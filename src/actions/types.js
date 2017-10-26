@@ -1,0 +1,11 @@
+export const ADD_BET = 'ADD_BET';
+export const GET_STAKE = 'GET_STAKE';
+export const GET_RETURN = 'GET_RETURN';
+export const GET_GAME = 'GET_GAME';
+export const REMOVE_BET = 'REMOVE_BET';
+export const REMOVE_ALL = 'REMOVE_ALL';
+export const GET_TOTAL = 'GET_TOTAL';
+export const GET_MATCH_DETAILS = 'GET_MATCH_DETAILS';
+export const GET_UPCOMING = 'GET_UPCOMING';
+export const GET_NEWS_STORIES = 'GET_NEWS_STORIES';
+export const PLACE_BET = 'PLACE_BET';
