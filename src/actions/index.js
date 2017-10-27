@@ -1,6 +1,6 @@
 import * as types from './types';
 import axios from 'axios';
-const API_URL = 'localhost:3001/api/';
+const API_URL = 'http://localhost:9000/api';
 
 export const fetchHomeDataRequest = () => ({
     type: types.FETCH_HOME_DATA_REQUEST
