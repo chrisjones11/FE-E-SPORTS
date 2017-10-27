@@ -8,7 +8,7 @@ class Navbar extends React.Component {
         <div className="navigation ">
             <nav className="navbar navbar-toggleable-md navbar-light bg-faded row">
                 <div className="col-4">
-                    <a className="navbar-brand" href="./index.html"> <img className='logo' src="http://res.cloudinary.com/diohwb5lp/image/upload/v1508857185/final_logo_ekuyip.png"></img></a>
+                    <a className="navbar-brand" href="./index.html"> <img className='logo' src="http://res.cloudinary.com/diohwb5lp/image/upload/v1508857185/final_logo_ekuyip.png"alt ="logo"></img></a>
                 </div>
                 <div className="col-6 navblock">
                     <div className="row">
