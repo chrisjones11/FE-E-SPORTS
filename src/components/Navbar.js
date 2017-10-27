@@ -5,7 +5,7 @@ import './Navbar.css';
 class Navbar extends React.Component {
   render() {
     return (
-        <div>
+        <div className="navigation ">
             <nav className="navbar navbar-toggleable-md navbar-light bg-faded row">
                 <div className="col-4">
                     <a className="navbar-brand" href="./index.html"> <img className='logo' src="http://res.cloudinary.com/diohwb5lp/image/upload/v1508857185/final_logo_ekuyip.png"></img></a>

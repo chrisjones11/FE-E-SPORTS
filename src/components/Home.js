@@ -10,6 +10,7 @@ import {connect} from 'react-redux';
 class Home extends React.Component {
   render() {
     return (
+      <div className="newsgame col-9">
       <div className='screening'>
         <div className="row slideshow">
           <div className="col-12">
@@ -83,7 +84,7 @@ class Home extends React.Component {
          
           </div>
         </div>
-
+        </div>
       
 
     );
