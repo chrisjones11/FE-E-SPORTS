@@ -13,7 +13,7 @@ class LiveGame extends React.Component {
         <div>       
             <div className="row">
                 <div className="col-12">
-                <img className="livethumbnail" src="https://i.ytimg.com/vi/5MuZmHEGqXQ/maxresdefault.jpg"/>
+                <img className="livethumbnail" src=""/>
                 </div>
             </div> 
             <div className="row">
