@@ -3,9 +3,9 @@ import * as types from '../actions/types';
 export const getInitialState = () => ({
     loading: false,
     data: {
-      newsStories: [],
-      games: [],
-      upcomingTourneys: []
+      "newsStories": [],
+      "games": [],
+      "upcomingTourneys": []
     },
     error: null
 });
