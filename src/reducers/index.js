@@ -1,7 +1,7 @@
 import {combineReducers} from 'redux';
 
 import game from './gameReducer';
-import betslip from './betslipReducer';
+import betslip from './betSlipReducer';
 import home from './homeReducer';
 
 const reducer = combineReducers({

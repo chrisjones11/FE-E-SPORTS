@@ -1,6 +1,6 @@
 import * as types from './types';
 import axios from 'axios';
-const API_URL = 'localhost:3000/api';
+const API_URL = 'localhost:3001/api/';
 
 export const fetchHomeDataRequest = () => ({
     type: types.FETCH_HOME_DATA_REQUEST
@@ -20,6 +20,7 @@ export default () => {
         return axios.get(`${API_URL}/`)
         .then ((res) => {
             dispatch(fetchHomeDataSuccess(res.data));
+            console.log(res.data)
         })
         .catch((error) => {
             dispatch(fetchHomeDataFailure(error.message));

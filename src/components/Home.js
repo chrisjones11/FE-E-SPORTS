@@ -10,9 +10,10 @@ class Home extends React.Component {
   }
   componentDidMount() {
     this.props.fetchHome();
+  
   }
   render() {
-    console.log(this);
+  
     return (
       <div className="newsgame col-9">
       <div className='screening'>
@@ -38,8 +39,8 @@ class Home extends React.Component {
           </div>
        </div>
        <div className='row gamedisplay'>
-         
-            {this.props.home.games.map((game) => {
+         {console.log(this.props.data.games, '********')}
+            {this.props.data.games.map((game) => {
               return (
                 <div className='col-sm-3 gamethumb'>
                 <div key={game.match_id}>
@@ -96,7 +97,7 @@ class Home extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  home: state.home.data,
+  data: state.home.data,
   loading: state.home.loading,
   error: state.home.error
 });
