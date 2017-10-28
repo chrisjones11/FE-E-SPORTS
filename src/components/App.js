@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css'
 import Navbar from './Navbar';
 import Footer from './Footer';
+
 import Game from './Game';
 import Home from './Home';
 import Betslip from './Betslip';
@@ -22,6 +23,8 @@ class App extends React.Component {
             </div> 
           <Footer/>
       </div>
+
+      
       </BrowserRouter>
     );
   }

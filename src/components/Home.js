@@ -4,13 +4,17 @@ import LiveGame from './LiveGame';
 import {connect} from 'react-redux';
 import fetchHome from '../actions';
 
+
+
 class Home extends React.Component {
   constructor(props) {
     super(props);
   }
   componentDidMount() {
     this.props.fetchHome();
-  
+
+    
+    
   }
   render() {
   
@@ -109,3 +113,5 @@ const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
+
+
