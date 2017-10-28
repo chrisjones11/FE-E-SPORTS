@@ -5,6 +5,7 @@ import "./Game.css"
 class Game extends React.Component {
   render() {
     return (
+      <div className="newsgame col-9">
       <div className="title">
         <div className="row " >
           <div className="col-sm-12">
@@ -69,6 +70,7 @@ class Game extends React.Component {
 <br/>
 <br/>
 
+        </div>
         </div>
         </div>
         </div>

@@ -5,15 +5,21 @@ import {connect} from 'react-redux';
 import fetchHome from '../actions';
 
 
+
 class Home extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
   }
   componentDidMount() {
     this.props.fetchHome();
+
+    
+    
   }
   render() {
+  
     return (
+      <div className="newsgame col-9">
       <div className='screening'>
         <div className="row slideshow">
           <div className="col-12">
@@ -37,8 +43,8 @@ class Home extends React.Component {
           </div>
        </div>
        <div className='row gamedisplay'>
-         
-            {this.props.home.games.map((game) => {
+         {console.log(this.props.data, '********')}
+            {this.props.data.map((game) => {
               return (
                 <div className='col-sm-3 gamethumb'>
                 <div key={game.match_id}>
@@ -87,7 +93,7 @@ class Home extends React.Component {
          
           </div>
         </div>
-
+        </div>
       
 
     );
@@ -95,7 +101,7 @@ class Home extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  home: state.home.data,
+  data: state.home.data.games,
   loading: state.home.loading,
   error: state.home.error
 });
@@ -106,4 +112,6 @@ const mapDispatchToProps = dispatch => ({
   }
 })
 
-export default connect(mapStateToProps,mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
+
+

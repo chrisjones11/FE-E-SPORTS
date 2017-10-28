@@ -1,45 +1,30 @@
 import React from 'react';
 import './App.css'
-import Betslip from './Betslip'
-import Game from './Game';
 import Navbar from './Navbar';
-import Home from './Home';
 import Footer from './Footer';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
+import Game from './Game';
+import Home from './Home';
+import Betslip from './Betslip';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
+  render () {
     return (
       <BrowserRouter>
-        <div>
-          <div className='main'>
+      <div className='main'>
+          <Navbar />  
+          <div className="content row">  
             <Switch>
-              <div className="navigation ">
-                <Navbar />
-             </div>
-              <div className="content row">
-                <div className="newsgame col-9">
-                <Route exact path='/' component= {Home}/>
-                  {/* <Game /> */}
-                  <p>Start working from <code>/src/components/App.js</code></p>
-                </div>
-                <div className="betslip-outer col-3">
-                  <div className='betslip row'>
-                    <div className="col-12 betmain">
-                      <Betslip />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div >
-                <Footer />
-              </div>
+              <Route exact path='/' component={Home}></Route>
+              <Route path='/game' component={Game}></Route>
             </Switch>
-          </div>
-        </div>
+            <Betslip /> 
+            </div> 
+          <Footer/>
+      </div>
+
+      
       </BrowserRouter>
     );
   }

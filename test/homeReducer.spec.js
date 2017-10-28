@@ -2,6 +2,7 @@ import {expect} from 'chai';
 import homeReducer, {getInitialState} from '../src/reducers/homeReducer';
 import * as actionCreators from '../src/actions';
 
+
 describe.only('homeReducer', () => {
     describe('default behaviour', () => {
       it('returns the passed previous state if an unrecognised action is passed', () => {
@@ -16,14 +17,35 @@ describe.only('homeReducer', () => {
         expect(newState).to.eql(getInitialState());
       });
     });
-    describe('getNewsStories', () => {
-        it('returns an object that includes an array with the key "newsStories"', () => {
-            const prevState = getInitialState();
-            const action = actionCreators.getNewsStories();
-            const newState = homeReducer(prevState, action);
-            console.log(prevState);
-            expect(newState.newsStories).to.be.an('array');
-
-        }); 
+    describe('fetchHomeData', () => {
+      it('handles FETCH_HOME_DATA_REQUEST', () => {
+        const prevState = getInitialState();
+        const action = actionCreators.fetchHomeDataRequest();
+        console.log(action);
+        const newState = homeReducer(prevState, action);
+        console.log(newState);  
+        expect(newState.loading).to.equal(true);
+        expect(newState.data).to.eql([]);
+        expect(newState.error).to.equal(null);
+      });
+      it('handles FETCH_HOME_DATA_SUCCESS', () => {
+        const data = [1,2,3];
+        const prevState = actionCreators.fetchHomeDataRequest();
+        const action = actionCreators.fetchHomeDataSuccess(data);
+        const newState = homeReducer(prevState, action);  
+        expect(newState.loading).to.equal(false);
+        expect(newState.data).to.eql(data);
+        expect(newState.error).to.equal(null);
+      });
+      it('handles FETCH_HOME_DATA_FAILURE', () => {
+        const err = 'something went wrong';
+        const prevState = actionCreators.fetchHomeDataRequest();
+        const action = actionCreators.fetchHomeDataFailure(err);
+        const newState = homeReducer(prevState, action);  
+        expect(newState.loading).to.equal(false);
+        expect(newState.data).to.eql([]);
+        expect(newState.error).to.equal(err);
+      });
     });
-});
+  });
+      
