@@ -1,6 +1,8 @@
 import React from 'react';
 import Oddstable from './Oddstable'
 import Charts from './Charts'
+import fetchGame from '../actions/game';
+import {connect} from 'react-redux';
 import "./Game.css"
 
 
@@ -24,7 +26,7 @@ class Game extends React.Component {
         <div className="row">
           < div className="col-sm-12">
          
-          <Oddstable />
+          <Oddstable winOrLossesStats = {this.props.data.winOrLossesStats} durationStats = {this.props.data.durationStats} firstBloodTimes = {this.props.data.firstBloodTimes}/>
           <Charts />
 <br/>
 <br/>
@@ -61,4 +63,16 @@ class Game extends React.Component {
   }
 }
 
-export default Game;
+const mapStateToProps = state => ({
+  data: state.game.data,
+  loading: state.game.loading,
+  error: state.game.error
+});
+
+const mapDispatchToProps = dispatch => ({
+  fetchGame: () => {
+    dispatch(fetchGame());
+  }
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Game);

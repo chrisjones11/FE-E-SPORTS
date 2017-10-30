@@ -2,7 +2,11 @@ import React from 'react';
 import './Oddstable.css';
 
 class Oddstable extends React.Component {
+    handleClick () {
+        console.log('odd clicked')
+    }
     render () {
+        console.log(this);
         return (
             <div className='col-10 oddstable'>
                 <div className='row'>
@@ -16,17 +20,17 @@ class Oddstable extends React.Component {
                     </div>
                 </div>
                 <div className='row'>
-                    <div className='col-5 marketdiv'>
-                        <p className='textalign'>Team A to win</p>
+                    <div className='col-5 marketdiv' onClick={this.handleClick}>
+                        <p className='textalign'>{this.props.winOrLossesStats[0].team_name} as {this.props.winOrLossesStats[0].side} to win</p>
                     </div>
-                    <div className='col-1 odds'>
-                        <p className='textalign'>3/1</p>
+                    <div className='col-1 odds' onClick={this.handleClick}>
+                        <p className='textalign'>{this.props.winOrLossesStats[0].toWin.fraction}</p>
                     </div>
-                    <div className='col-5 marketdiv'>
-                        <p className="textalign">Team B to win</p>
+                    <div className='col-5 marketdiv' onClick={this.handleClick}>
+                        <p className="textalign">{this.props.winOrLossesStats[1].team_name} as {this.props.winOrLossesStats[1].side} to win</p>
                     </div>
-                    <div className='col-1 odds'>
-                        <p className='textalign'>2/1</p>
+                    <div className='col-1 odds' onClick={this.handleClick}>
+                        <p className='textalign'>{this.props.winOrLossesStats[1].toWin.fraction}</p>
                     </div>
                 </div>
                 <div className='row'>
@@ -35,43 +39,40 @@ class Oddstable extends React.Component {
                     </div>
                 </div>
                 <div className='row'>
-                    <div className='col-3 marketdiv'>
+                    <div className='col-3 marketdiv' onClick={this.handleClick}>
                         <p className='textalign'>Less than 1:00</p>
                     </div>
-                    <div className='col-1 odds'>
-                        <p className='textalign'>3/1</p>
+                    <div className='col-1 odds' onClick={this.handleClick}>
+                        <p className='textalign'>{this.props.firstBloodTimes[0].lessthan1min.fraction}</p>
                     </div>
-                    <div className='col-3 marketdiv'>
-                        <p className="textalign">Between 1:01 and 1:30</p>
+                    <div className='col-3 marketdiv' onClick={this.handleClick}>
+                        <p className="textalign">Between 1:01 and 3:00</p>
                     </div>
-                    <div className='col-1 odds'>
-                        <p className='textalign'>7/2</p>
+                    <div className='col-1 odds' onClick={this.handleClick}>
+                        <p className='textalign'>{this.props.firstBloodTimes[0].between1and3min.fraction}</p>
                     </div>
-                    <div className='col-3 marketdiv'>
-                        <p className="textalign">Between 1:31 and 3:00</p>
+                    <div className='col-3 marketdiv' onClick={this.handleClick}>
+                        <p className="textalign">Between 3:01 and 5:00</p>
                     </div>
-                    <div className='col-1 odds'>
-                        <p className='textalign'>5/1</p>
+                    <div className='col-1 odds' onClick={this.handleClick}>
+                        <p className='textalign'>{this.props.firstBloodTimes[0].between3and5min.fraction}</p>
                     </div>
                 </div>
                 <div className='row'>
-                    <div className='col-3 marketdiv'>
-                        <p className='textalign'>Between 3:01 and 5:00</p>
+                    <div className='col-3 marketdiv' onClick={this.handleClick}>
+                        <p className='textalign'>Between 5:01 and 10:00</p>
                     </div>
-                    <div className='col-1 odds'>
-                        <p className='textalign'>8/1</p>
+                    <div className='col-1 odds' onClick={this.handleClick}>
+                        <p className='textalign'>{this.props.firstBloodTimes[0].between5and10min.fraction}</p>
                     </div>
-                    <div className='col-3 marketdiv'>
-                        <p className="textalign">Between 5:01 and 10:00</p>
+                    <div className='col-3 marketdiv' onClick={this.handleClick}>
+                        <p className="textalign">Over 10:00</p>
                     </div>
-                    <div className='col-1 odds'>
-                        <p className='textalign'>15/1</p>
+                    <div className='col-1 odds' onClick={this.handleClick}>
+                        <p className='textalign'>{this.props.firstBloodTimes[0].over10min.fraction}</p>
                     </div>
-                    <div className='col-3 marketdiv'>
-                        <p className="textalign">Greater than 10:00</p>
-                    </div>
-                    <div className='col-1 odds'>
-                        <p className='textalign'>30/1</p>
+                    <div className='col-4 marketdiv' onClick={this.handleClick}>
+                        <p className="textalign"></p>
                     </div>
                 </div>
                 <div className='row'>
@@ -80,43 +81,40 @@ class Oddstable extends React.Component {
                     </div>
                 </div>
                 <div className='row'>
-                    <div className='col-3 marketdiv'>
-                        <p className='textalign'>Less than 1:00</p>
+                    <div className='col-3 marketdiv' onClick={this.handleClick}>
+                        <p className='textalign'>Less than 20:00</p>
                     </div>
-                    <div className='col-1 odds'>
-                        <p className='textalign'>3/1</p>
+                    <div className='col-1 odds' onClick={this.handleClick}>
+                        <p className='textalign'>{this.props.durationStats[0].lessthan20min.fraction}</p>
                     </div>
-                    <div className='col-3 marketdiv'>
-                        <p className="textalign">Between 1:01 and 1:30</p>
+                    <div className='col-3 marketdiv' onClick={this.handleClick}>
+                        <p className="textalign">Between 20:01 and 30:00</p>
                     </div>
-                    <div className='col-1 odds'>
-                        <p className='textalign'>7/2</p>
+                    <div className='col-1 odds' onClick={this.handleClick}>
+                        <p className='textalign'>{this.props.durationStats[0].between20and30min.fraction}</p>
                     </div>
-                    <div className='col-3 marketdiv'>
-                        <p className="textalign">Between 1:31 and 3:00</p>
+                    <div className='col-3 marketdiv' onClick={this.handleClick}>
+                        <p className="textalign">Between 30:01 and 45:00</p>
                     </div>
-                    <div className='col-1 odds'>
-                        <p className='textalign'>5/1</p>
+                    <div className='col-1 odds' onClick={this.handleClick}>
+                        <p className='textalign'>{this.props.durationStats[0].between30and45min.fraction}</p>
                     </div>
                 </div>
                 <div className='row'>
-                    <div className='col-3 marketdiv'>
-                        <p className='textalign'>Between 3:01 and 5:00</p>
+                    <div className='col-3 marketdiv' onClick={this.handleClick}>
+                        <p className='textalign'>Between 45:01 and 55:00</p>
                     </div>
-                    <div className='col-1 odds'>
-                        <p className='textalign'>8/1</p>
+                    <div className='col-1 odds' onClick={this.handleClick}>
+                        <p className='textalign'>{this.props.durationStats[0].between45and55min.fraction}</p>
                     </div>
-                    <div className='col-3 marketdiv'>
-                        <p className="textalign">Between 5:01 and 10:00</p>
+                    <div className='col-3 marketdiv' onClick={this.handleClick}>
+                        <p className="textalign">Over 55:00</p>
                     </div>
-                    <div className='col-1 odds'>
-                        <p className='textalign'>15/1</p>
+                    <div className='col-1 odds' onClick={this.handleClick}>
+                        <p className='textalign'>{this.props.durationStats[0].over55min.fraction}</p>
                     </div>
-                    <div className='col-3 marketdiv'>
-                        <p className="textalign">Greater than 10:00</p>
-                    </div>
-                    <div className='col-1 odds'>
-                        <p className='textalign'>30/1</p>
+                    <div className='col-4 marketdiv'>
+                        <p className="textalign"></p>
                     </div>
                 </div>
             </div>
