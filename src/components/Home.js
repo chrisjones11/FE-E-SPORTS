@@ -11,7 +11,7 @@ class Home extends React.Component {
     super(props);
   }
   componentDidMount() {
-    this.props.fetchHome();
+    // this.props.fetchHome();
 
     
     

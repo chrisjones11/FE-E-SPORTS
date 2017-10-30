@@ -14,6 +14,10 @@ export const fetchHomeDataFailure = (error) => ({
     payload: error
 });
 
+
+
+
+
 export default () => {
     return (dispatch) => {
         dispatch(fetchHomeDataRequest);

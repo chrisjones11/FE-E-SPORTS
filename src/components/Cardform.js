@@ -18,17 +18,17 @@ this.state ={
         <div className="col-6 cardformdiv">
             <div className="row">
                 <div className="col-12">
-                    <p>Team/Person Name:</p>
+                    <p>Team/Person Name:{this.props.teamName}</p>
                 </div>
             </div>
         <div className="row">
             <div className="col-12">
-                <p>Betting Market:</p>
+                <p>Betting Market:{this.props.bettingMarket}</p>
             </div>
         </div>
         <div className="row">
             <div className="col-12">
-                <p>Tournament/Comp Name:</p>
+                <p>Tournament/Comp Name:{this.props.tournamentName}</p>
             </div>
         </div>
         <div className="row">
@@ -42,9 +42,9 @@ this.state ={
             </div>
         </div>
     </div>
-    {/* <div className="col-3 oddsdiv">
-        <p>ODDS:3/1</p>
-    </div> */}
+    <div className="col-3 oddsdiv">
+        <p>ODDS:{this.props.odds}</p>
+    </div>
     </div>
       </div>
     );
