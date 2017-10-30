@@ -3,12 +3,12 @@ import React from 'react';
 class Cardform extends React.Component {
     constructor(props){
         super(props); 
-this.state ={
-    number :''
-}
+
         }
+
     
   render () {
+     console.log(this.props.stake);
     return (
       <div>
         <div className="row unplaced-bet">
@@ -34,11 +34,11 @@ this.state ={
         <div className="row">
             <div className="col-6 formdiv">
                 <form>
-                 <input type="number" className="stake" placeholder="stake" ></input>
+                 <input onChange={this.props.handleChange}  type='text' value={this.props.stake} className="stake" placeholder="stake" ></input>
                 </form>   
             </div>
             <div className="col-6 returndiv">
-                <p className='return'>Return:</p>
+                <p className='return'>Return:{this.props.stake*this.props.odds}</p>
             </div>
         </div>
     </div>
@@ -50,5 +50,6 @@ this.state ={
     );
   }
 }
+
 
 export default Cardform;

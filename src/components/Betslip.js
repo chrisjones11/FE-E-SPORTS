@@ -2,10 +2,20 @@ import React from 'react';
 import Cardform from './Cardform'
 import './Betslip.css'
 import {connect} from 'react-redux';
-import betslip from '../actions/betslip'
+import insertStake from '../actions/betslip'
 
 
 class Betslip extends React.Component {
+    constructor(props){
+        super(props);
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+handleChange(event){
+console.log(event.target.value, 'EVENT')
+const val = event.target.value;
+this.props.insertStake(val);
+}
     render () {
       return (
           
@@ -24,7 +34,7 @@ class Betslip extends React.Component {
                             {/* MAP FUNCTION */}
                             <Cardform betId = {item.BetId} teamName = {item.TeamName}
                             bettingMarket = {item.BettingMarket} tournamentName ={item.TournamentName}
-                            odds = {item.Odds} />
+                            odds = {item.Odds} stake = {item.Stake} handleChange ={this.handleChange}/>
                             {/* <Cardform   />
                             <Cardform /> */}
                             {/* END OF MAP FUNCTION */}
@@ -63,10 +73,10 @@ class Betslip extends React.Component {
     error:state.betslip.error
   });
   
-//   const mapDispatchToProps = dispatch => ({
-//     fetchBetslip: () => {
-//       dispatch(fetchBetslip());
-//     }
-//   })
+  const mapDispatchToProps = dispatch => ({
+    insertStake: (stake) => {
+      dispatch(insertStake(stake));
+    }
+  })
   
-  export default connect(mapStateToProps)(Betslip);
+  export default connect(mapStateToProps,mapDispatchToProps)(Betslip);
