@@ -1,0 +1,29 @@
+.marketdiv {
+    display: table;
+    height: 50px;
+    width: 100%;
+    text-align: center;
+}
+
+.textalign {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.odds {
+    background-color: #b8b8b8;
+    display: table;
+    vertical-align: middle;
+    height: 50px;
+    width: 100%;
+    text-align: center;
+}
+
+.oddstitle {
+    background-color: #707070;
+    color: white;
+    display: table;
+    height: 50px;
+    width: 100%;
+    text-align: center;
+}
