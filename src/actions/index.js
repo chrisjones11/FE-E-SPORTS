@@ -16,8 +16,6 @@ export const fetchHomeDataFailure = (error) => ({
 
 
 
-
-
 export default () => {
     return (dispatch) => {
         dispatch(fetchHomeDataRequest);
@@ -31,7 +29,6 @@ export default () => {
         })
     }
 }
-
 
 //actions
 // export const addBet = (data) => ({

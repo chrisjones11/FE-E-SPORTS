@@ -1,4 +1,8 @@
 import React from 'react';
+import Oddstable from './Oddstable'
+import Charts from './Charts'
+import fetchGame from '../actions/game';
+import {connect} from 'react-redux';
 import "./Game.css"
 
 
@@ -13,6 +17,7 @@ class Game extends React.Component {
             <p>Go for a Bet!!!</p>
           </div>
         </div>
+        {/* GET THE IFRAME VIDEO EMBEDS WORKING */}
         <div className="row gametitleimgcontainer">
           <div className="col-sm-12">
             <img className="gametitleimg" src='http://res.cloudinary.com/diohwb5lp/image/upload/v1508778140/titlepage_image_lbtxjf.png'/>
@@ -20,31 +25,9 @@ class Game extends React.Component {
         </div>
         <div className="row">
           < div className="col-sm-12">
-          <table className="oddstable">
-            <tbody>
-  <tr>
-    <th colSpan="2">Result</th>
-  </tr>
-  <tr>
-    <td>A  4/1</td>
-    <td>B  6/1</td>
-  </tr>
-  <tr>
-  <th colSpan="2">Towers</th>
-  </tr>
-  <tr>
-    <td>A  2/1</td>
-    <td>B  7/2</td>
-  </tr>
-  <tr>
-  <th colSpan="2">Barracks</th>
-  </tr>
-  <tr>
-    <td>A  2/1</td>
-    <td>B  7/2</td>
-  </tr>
-  </tbody>
-</table>
+         
+          <Oddstable winOrLossesStats = {this.props.data.winOrLossesStats} durationStats = {this.props.data.durationStats} firstBloodTimes = {this.props.data.firstBloodTimes}/>
+          <Charts />
 <br/>
 <br/>
 <br/>
@@ -80,4 +63,16 @@ class Game extends React.Component {
   }
 }
 
-export default Game;
+const mapStateToProps = state => ({
+  data: state.game.data,
+  loading: state.game.loading,
+  error: state.game.error
+});
+
+const mapDispatchToProps = dispatch => ({
+  fetchGame: () => {
+    dispatch(fetchGame());
+  }
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Game);

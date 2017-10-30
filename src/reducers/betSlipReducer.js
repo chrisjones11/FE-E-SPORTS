@@ -1,3 +1,4 @@
+
 import * as types from '../actions/types';
 
 export const getInitialState = () => ({
@@ -37,21 +38,3 @@ export default (prevState = getInitialState(), action) => {
   }
 }
 
-// export default (prevState = getInitialState(), action) => {
-//   switch (action.type) {
-//     case types.INSERT_STAKE: {
-//       return Object.assign({}, prevState, {
-//         Stake: prevState.Stake.concat(action.payload)
-//       })
-//     }
-
-    
-//     case types.RETURN_PAYMENT: {
-//       return Object.assign({}, prevState, {
-//        stake: prevstate.stake,
-//        return: prevState.return
-//       })
-//     }
-//   }
-// }
-  
