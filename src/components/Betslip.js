@@ -10,12 +10,13 @@ class Betslip extends React.Component {
         super(props);
         this.handleChange = this.handleChange.bind(this);
     }
+    handleChange(event){
+        // console.log(this.props.betId)
+        // console.log(this.props.stake)
+        const val = event.target.value;
+        this.props.insertStake(val);
+        }
 
-handleChange(event){
-console.log(event.target.value, 'EVENT')
-const val = event.target.value;
-this.props.insertStake(val);
-}
     render () {
       return (
           
