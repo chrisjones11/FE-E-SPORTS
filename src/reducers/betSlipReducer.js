@@ -55,9 +55,19 @@ export default (prevState = getInitialState(), action) => {
           console.log(action.payload)
           if (Array.isArray(action.payload)) {console.log('firstblood or match duration')
             newbet.TeamName = 'Any';
-         } 
+            newbet.BettingMarket = action.payload[1];
+            newbet.TournamentName = action.payload[0].match_id;
+            newbet.Odds = action.payload[0][action.payload[1]].odd;
+            newbet.fraction = action.payload[0][action.payload[1]].fraction;
+} 
           else {console.log('team to win')
-         }
+            newbet.TeamName = action.payload.team_name;
+            newbet.BettingMarket = action.payload.team_name + ' to win';
+            newbet.TournamentName = action.payload.match_id;
+            newbet.Odds = action.payload.toWin.odd;
+            newbet.fraction = action.payload.toWin.farction;
+            
+          }
           return Object.assign({}, prevState, {
             toBePlaced: prevState.toBePlaced.concat(newbet)
           });
