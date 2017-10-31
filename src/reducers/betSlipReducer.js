@@ -41,7 +41,7 @@ export default (prevState = getInitialState(), action) => {
 
           case types.CREATE_BET:
           let newbet = {
-            BetId: 1,
+            BetId: uid(10),
             TeamName: 'TeamName',
             BettingMarket: 'BettingMarket',
             TournamentName: 'TournamentName',
@@ -55,10 +55,9 @@ export default (prevState = getInitialState(), action) => {
           console.log(action.payload)
           if (Array.isArray(action.payload)) {console.log('firstblood or match duration')
             newbet.TeamName = 'Any';
-            newbet.BetId = uid(10);
-          } 
-          else {console.log('team to win')}
-          newbet.BetId = uid(10)
+         } 
+          else {console.log('team to win')
+         }
           return Object.assign({}, prevState, {
             toBePlaced: prevState.toBePlaced.concat(newbet)
           });
