@@ -19,6 +19,10 @@ export const createBet = (data) => ({
     payload: data
 });
 
+export const removeAll = () => ({
+    type: types.REMOVE_ALL
+});
+
 export const insertStake = ((stake, id) => {
     console.log(id, 'its me')
     return {

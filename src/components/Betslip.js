@@ -2,16 +2,22 @@ import React from 'react';
 import Cardform from './Cardform'
 import './Betslip.css'
 import {connect} from 'react-redux';
-import {insertStake} from '../actions/betslip'
+import {insertStake} from '../actions/betslip';
+import {removeAll} from '../actions/betslip';
 
 
 class Betslip extends React.Component {
     constructor(props){
         super(props);
         this.changeReturn = this.changeReturn.bind(this);
+        this.removeAllHander = this.removeAllHandler.bind(this);
     }
     changeReturn(val, id){
      this.props.insertStake(val, id);
+        }
+
+    removeAllHandler(){
+     this.props.removeAll();
         }
 
     render () {
@@ -38,15 +44,15 @@ class Betslip extends React.Component {
                         </div>
                     </div>
               )}
-              )};
+              )}
                   <div className="row">
                         <div className="col-12 totalbetdiv">
-                            <p>TOTAL BET     £5.00</p>
+                            <p>TOTAL BET  {this.props.totalBet}</p>
                         </div>
                     </div>
                     <div className="row">
                         <div className="col-6 removealldiv">
-                            <a className="btn btn-default btn-work removeall" href="#">Remove All</a>
+                            <a className="btn btn-default btn-work removeall" href="#" onClick={this.removeAllHander}>Remove All</a>
                         </div>
                         <div className="col-6">
                             <a className="btn btn-default btn-placebet" href="#">Place Bet</a>
@@ -65,6 +71,7 @@ class Betslip extends React.Component {
   
   const mapStateToProps = state => ({
     toBePlaced:state.betslip.toBePlaced,
+    totalBet:state.betslip.totalBet,
     activeBets:state.betslip.data.activeBets,
     loading:state.betslip.loading,
     error:state.betslip.error
@@ -73,7 +80,10 @@ class Betslip extends React.Component {
   const mapDispatchToProps = dispatch => ({
     insertStake: (stake,id) => {
       dispatch(insertStake(stake,id));
-    }
+    },
+    removeAll: () => {
+        dispatch(removeAll());
+      }
   })
   
   export default connect(mapStateToProps,mapDispatchToProps)(Betslip);
