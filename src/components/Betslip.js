@@ -4,7 +4,7 @@ import "./Betslip.css";
 import { connect } from "react-redux";
 import { insertStake } from "../actions/betslip";
 import { placeBets } from "../actions/postBets";
-// import postBets from "../actions/postBets";
+import postBets from "../actions/postBets";
 
 class Betslip extends React.Component {
   constructor(props) {
@@ -19,7 +19,7 @@ class Betslip extends React.Component {
   handlePlacedBets() {
     const bets = this.props.toBePlaced;
     this.props.placeBets(bets);
-    // this.props.postBets(bets);
+    this.props.postBets(bets);
   }
 
   render() {
@@ -116,11 +116,10 @@ const mapDispatchToProps = dispatch => ({
   },
   placeBets: bets => {
     dispatch(placeBets(bets));
+  },
+  postBets: bets => {
+    dispatch(postBets(bets));
   }
-  //   },
-  //   postBets: bets => {
-  //     dispatch(postBets(bets));
-  //   }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Betslip);
