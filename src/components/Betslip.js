@@ -2,25 +2,21 @@ import React from 'react';
 import Cardform from './Cardform'
 import './Betslip.css'
 import {connect} from 'react-redux';
-import insertStake from '../actions/betslip'
+import {insertStake} from '../actions/betslip'
 
 
 class Betslip extends React.Component {
     constructor(props){
         super(props);
-        this.handleChange = this.handleChange.bind(this);
+        this.changeReturn = this.changeReturn.bind(this);
     }
-    handleChange(event){
-        // console.log(this.props.betId)
-        // console.log(this.props.stake)
-        const val = event.target.value;
-        this.props.insertStake(val);
+    changeReturn(val, id){
+     this.props.insertStake(val, id);
         }
 
     render () {
       return (
-          
-        <div className="betslip-outer col-3">
+         <div className="betslip-outer col-3">
             <div className='betslip row'>
                 <div className="col-12 betmain">
                     <div className="row">
@@ -33,9 +29,9 @@ class Betslip extends React.Component {
                     <div className="unplaced-bets row">
                         <div className="col-12 ">
                             {/* MAP FUNCTION */}
-                            <Cardform betId = {item.BetId} teamName = {item.TeamName}
+                            <Cardform BetId = {item.BetId} teamName = {item.TeamName}
                             bettingMarket = {item.BettingMarket} tournamentName ={item.TournamentName}
-                            odds = {item.Odds} stake = {item.Stake} handleChange ={this.handleChange}/>
+                            odds = {item.Odds} stake = {item.Stake} changeReturn ={this.changeReturn}/>
                             {/* <Cardform   />
                             <Cardform /> */}
                             {/* END OF MAP FUNCTION */}
@@ -75,8 +71,8 @@ class Betslip extends React.Component {
   });
   
   const mapDispatchToProps = dispatch => ({
-    insertStake: (stake) => {
-      dispatch(insertStake(stake));
+    insertStake: (stake,id) => {
+      dispatch(insertStake(stake,id));
     }
   })
   

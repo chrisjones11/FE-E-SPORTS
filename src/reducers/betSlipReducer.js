@@ -1,4 +1,5 @@
 import * as types from '../actions/types';
+import uid from 'uid'; 
 
 export const getInitialState = () => ({
     loading: false,
@@ -13,22 +14,7 @@ export const getInitialState = () => ({
       fraction:4/1,
       loss:null,
       win:null,
-      key: 0
-
-    },
-    {  BetId: 2,
-    TeamName: 'TeamName',
-    BettingMarket: 'BettingMarket',
-    TournamentName: 'TournamentName',
-    Stake: 0,
-    Return: 'Return',
-    Odds: 5,
-    fraction : 5/1,
-    loss:null,
-    win:null,
-    key:1
-  }
-
+      }
     ],
 
     data: {
@@ -45,12 +31,38 @@ export default (prevState = getInitialState(), action) => {
           case types.INSERT_STAKE: 
           const newState = Object.assign({}, prevState)
           newState.toBePlaced = prevState.toBePlaced.slice()
-          for(var i=0; i< newState.toBePlaced.length; i++){
-          newState.toBePlaced[i] = Object.assign({},prevState.toBePlaced[i])
-          newState.toBePlaced[i].Stake = action.payload;
-          console.log(newState, '*****')
+          const arr = newState.toBePlaced
+          for(var i=0; i< arr.length; i++){
+           if (arr[i].BetId === action.id){
+      arr[i].Stake = action.payload;
+      }
           }
           return newState;
+
+          case types.CREATE_BET:
+          let newbet = {
+            BetId: 1,
+            TeamName: 'TeamName',
+            BettingMarket: 'BettingMarket',
+            TournamentName: 'TournamentName',
+            Stake: 0,
+            Return: 'Return',
+            Odds: 4,
+            fraction:4/1,
+            loss:null,
+            win:null,
+            }
+          console.log(action.payload)
+          if (Array.isArray(action.payload)) {console.log('firstblood or match duration')
+            newbet.TeamName = 'Any';
+            newbet.BetId = uid(10);
+          } 
+          else {console.log('team to win')}
+          newbet.BetId = uid(10)
+          return Object.assign({}, prevState, {
+            toBePlaced: prevState.toBePlaced.concat(newbet)
+          });
+
       default: 
        return prevState;
   }

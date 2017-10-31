@@ -26,33 +26,8 @@ class Game extends React.Component {
         <div className="row">
           < div className="col-sm-12">
          
-          <Oddstable winOrLossesStats = {this.props.data.winOrLossesStats} durationStats = {this.props.data.durationStats} firstBloodTimes = {this.props.data.firstBloodTimes}/>
+          <Oddstable winOrLossesStats = {this.props.data.winOrLossesStats} durationStats = {this.props.data.durationStats} firstBloodTimes = {this.props.data.firstBloodTimes} createBet = {this.createBet}/>
           <Charts />
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
         </div>
         </div>
         </div>
@@ -60,6 +35,11 @@ class Game extends React.Component {
        
       
       );
+  }
+  createBet (odd) {
+    console.log('createBet called')
+    if (Array.isArray(odd)) {console.log('either first blood or match duration')}
+    else if (typeof odd === 'object') {console.log('bet on winner')}
   }
 }
 

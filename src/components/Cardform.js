@@ -1,13 +1,19 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import insertStake from '../actions/betslip'
+
 
 class Cardform extends React.Component {
     constructor(props){
         super(props); 
 
+        this.handleChange = this.handleChange.bind(this);
         }
 
+        handleChange(event){
+            event.preventDefault();
+            const val = event.target.value;
+            const id = this.props.BetId         
+            this.props.changeReturn(val, id)
+            }
 
 
     
@@ -38,7 +44,7 @@ class Cardform extends React.Component {
         <div className="row">
             <div className="col-6 formdiv">
                 <form>
-                 <input onChange={this.props.handleChange} betId='2' type='text' value={this.props.stake} className="stake" placeholder="stake" ></input>
+                 <input onChange={this.handleChange} type='text' value={this.props.stake} className="stake" placeholder="stake" ></input>
                 </form>   
             </div>
             <div className="col-6 returndiv">
