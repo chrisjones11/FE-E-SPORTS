@@ -30,7 +30,7 @@ export default (prevState = getInitialState(), action) => {
 
   switch (action.type) {
     case types.INSERT_STAKE:
-      const newState = Object.assign({}, prevState);
+      let newState = Object.assign({}, prevState);
       newState.toBePlaced = prevState.toBePlaced.slice();
       const arr = newState.toBePlaced;
       for (var i = 0; i < arr.length; i++) {
@@ -66,10 +66,10 @@ export default (prevState = getInitialState(), action) => {
       });
 
     case types.PLACE_BETS:
-      let newState = Object.assign({}, prevState);
-      newState.data.activeBets.concat(newState.toBePlaced);
-      newState.toBePlaced = [];
-      return newState;
+      let newX = Object.assign({}, prevState);
+      newX.data.activeBets = newX.data.activeBets.concat(newX.toBePlaced);
+      newX.toBePlaced = [];
+      return newX;
 
     default:
       return prevState;

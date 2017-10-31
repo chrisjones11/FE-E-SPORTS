@@ -4,7 +4,7 @@ import "./Betslip.css";
 import { connect } from "react-redux";
 import { insertStake } from "../actions/betslip";
 import { placeBets } from "../actions/postBets";
-import postBets from "../actions/postBets";
+// import postBets from "../actions/postBets";
 
 class Betslip extends React.Component {
   constructor(props) {
@@ -19,7 +19,7 @@ class Betslip extends React.Component {
   handlePlacedBets() {
     const bets = this.props.toBePlaced;
     this.props.placeBets(bets);
-    this.props.postBets(bets);
+    // this.props.postBets(bets);
   }
 
   render() {
@@ -36,7 +36,6 @@ class Betslip extends React.Component {
               return (
                 <div className="unplaced-bets row">
                   <div className="col-12 ">
-                    {/* MAP FUNCTION */}
                     <Cardform
                       BetId={item.BetId}
                       teamName={item.TeamName}
@@ -46,9 +45,6 @@ class Betslip extends React.Component {
                       stake={item.Stake}
                       changeReturn={this.changeReturn}
                     />
-                    {/* <Cardform   />
-                            <Cardform /> */}
-                    {/* END OF MAP FUNCTION */}
                   </div>
                 </div>
               );
@@ -77,6 +73,23 @@ class Betslip extends React.Component {
             <div className="row activebetdiv ">
               <p className="activebet">ACTIVE BETS</p>
             </div>
+            {this.props.activeBets.map(item => {
+              return (
+                <div className="unplaced-bets row">
+                  <div className="col-12 ">
+                    <Cardform
+                      BetId={item.BetId}
+                      teamName={item.TeamName}
+                      bettingMarket={item.BettingMarket}
+                      tournamentName={item.TournamentName}
+                      odds={item.Odds}
+                      stake={item.Stake}
+                      changeReturn={this.changeReturn}
+                    />
+                  </div>
+                </div>
+              );
+            })};
           </div>
         </div>
       </div>
@@ -97,10 +110,11 @@ const mapDispatchToProps = dispatch => ({
   },
   placeBets: bets => {
     dispatch(placeBets(bets));
-  },
-  postBets: bets => {
-    dispatch(postBets(bets));
   }
+  //   },
+  //   postBets: bets => {
+  //     dispatch(postBets(bets));
+  //   }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Betslip);
