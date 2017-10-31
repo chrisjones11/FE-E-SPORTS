@@ -12,7 +12,7 @@ export const getInitialState = () => ({
       Stake: 0,
       Return: "Return",
       Odds: 4,
-      fraction: 4 / 1,
+      fraction: "4/1",
       loss: null,
       win: null
     }
@@ -49,7 +49,7 @@ export default (prevState = getInitialState(), action) => {
         Stake: 0,
         Return: "Return",
         Odds: 4,
-        fraction: 4 / 1,
+        fraction: "4/1",
         loss: null,
         win: null
       };
@@ -66,10 +66,12 @@ export default (prevState = getInitialState(), action) => {
       });
 
     case types.PLACE_BETS:
-      let newX = Object.assign({}, prevState);
-      newX.data.activeBets = newX.data.activeBets.concat(newX.toBePlaced);
-      newX.toBePlaced = [];
-      return newX;
+      newState = Object.assign({}, prevState);
+      newState.data.activeBets = newState.data.activeBets.concat(
+        newState.toBePlaced
+      );
+      newState.toBePlaced = [];
+      return newState;
 
     default:
       return prevState;

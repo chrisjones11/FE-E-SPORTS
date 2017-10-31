@@ -42,8 +42,11 @@ class Betslip extends React.Component {
                       bettingMarket={item.BettingMarket}
                       tournamentName={item.TournamentName}
                       odds={item.Odds}
+                      fraction={item.fraction}
                       stake={item.Stake}
                       changeReturn={this.changeReturn}
+                      loss={item.loss}
+                      win={item.win}
                     />
                   </div>
                 </div>
@@ -83,8 +86,11 @@ class Betslip extends React.Component {
                       bettingMarket={item.BettingMarket}
                       tournamentName={item.TournamentName}
                       odds={item.Odds}
+                      fraction={item.fraction}
                       stake={item.Stake}
                       changeReturn={this.changeReturn}
+                      loss={item.loss}
+                      win={item.win}
                     />
                   </div>
                 </div>
