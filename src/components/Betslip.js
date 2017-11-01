@@ -1,3 +1,4 @@
+
 import React from "react";
 import Cardform from "./Cardform";
 import "./Betslip.css";
@@ -5,12 +6,14 @@ import { connect } from "react-redux";
 import { insertStake } from "../actions/betslip";
 import { placeBets } from "../actions/postBets";
 import postBets from "../actions/postBets";
+import {removeAll} from '../actions/betslip';
 
 class Betslip extends React.Component {
   constructor(props) {
     super(props);
     this.changeReturn = this.changeReturn.bind(this);
     this.handlePlacedBets = this.handlePlacedBets.bind(this);
+     this.removeAllHander = this.removeAllHandler.bind(this);
   }
   changeReturn(val, id) {
     this.props.insertStake(val, id);
@@ -21,6 +24,9 @@ class Betslip extends React.Component {
     this.props.placeBets(bets);
     this.props.postBets(bets);
   }
+   removeAllHandler(){
+     this.props.removeAll();
+        }
 
   render() {
     return (
@@ -47,9 +53,12 @@ class Betslip extends React.Component {
                       changeReturn={this.changeReturn}
                       loss={item.loss}
                       win={item.win}
+      
+      
                     />
                   </div>
-                </div>
+
+             </div>
               );
             })};
             <div className="row">
@@ -59,10 +68,8 @@ class Betslip extends React.Component {
             </div>
             <div className="row">
               <div className="col-6 removealldiv">
-                <a className="btn btn-default btn-work removeall" href="#">
-                  Remove All
-                </a>
-              </div>
+                <a className="btn btn-default btn-work removeall" href="#" onClick={this.removeAllHander}> Remove All </a>
+                  </div>
               <div className="col-6">
                 <a
                   className="btn btn-default btn-placebets"
@@ -76,6 +83,7 @@ class Betslip extends React.Component {
             <div className="row activebetdiv ">
               <p className="activebet">ACTIVE BETS</p>
             </div>
+
             {this.props.activeBets.map(item => {
               return (
                 <div className="unplaced-bets row">
@@ -105,6 +113,7 @@ class Betslip extends React.Component {
 
 const mapStateToProps = state => ({
   toBePlaced: state.betslip.toBePlaced,
+  totalBet:state.betslip.totalBet,
   activeBets: state.betslip.data.activeBets,
   loading: state.betslip.loading,
   error: state.betslip.error
@@ -119,7 +128,10 @@ const mapDispatchToProps = dispatch => ({
   },
   postBets: bets => {
     dispatch(postBets(bets));
-  }
+  },
+    removeAll: () => {
+        dispatch(removeAll());
+      }
 });
-
-export default connect(mapStateToProps, mapDispatchToProps)(Betslip);
+ 
+  export default connect(mapStateToProps,mapDispatchToProps)(Betslip);
