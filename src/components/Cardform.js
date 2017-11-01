@@ -5,6 +5,7 @@ class Cardform extends React.Component {
     super(props);
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleRemoveClick = this.handleRemoveClick.bind(this);
   }
 
   handleChange(event) {
@@ -12,6 +13,13 @@ class Cardform extends React.Component {
     const val = event.target.value;
     const id = this.props.BetId;
     this.props.changeReturn(val, id);
+  
+  }
+
+  handleRemoveClick(event){
+  console.log(event);
+  this.props.removeBetHandler(event);
+
   }
 
   render() {
@@ -21,7 +29,7 @@ class Cardform extends React.Component {
         <div className="row unplaced-bet">
           <div className="col-3 crossbtndiv">
             <img
-              className="crossbtn"
+              className="crossbtn"  onClick = {this.handleRemoveClick.bind(null,this.props.BetId)}
               src="http://res.cloudinary.com/diohwb5lp/image/upload/v1508943403/remove_blk_ss7nxx.png"
             />
           </div>

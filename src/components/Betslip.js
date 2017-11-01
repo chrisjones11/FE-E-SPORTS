@@ -7,13 +7,17 @@ import { insertStake } from "../actions/betslip";
 import { placeBets } from "../actions/postBets";
 import postBets from "../actions/postBets";
 import {removeAll} from '../actions/betslip';
+import {removeBet} from '../actions/betslip';
+
 
 class Betslip extends React.Component {
   constructor(props) {
     super(props);
     this.changeReturn = this.changeReturn.bind(this);
     this.handlePlacedBets = this.handlePlacedBets.bind(this);
-     this.removeAllHander = this.removeAllHandler.bind(this);
+    this.removeAllHander = this.removeAllHandler.bind(this);
+    this.removeBetHandler = this.removeBetHandler.bind(this);
+
   }
   changeReturn(val, id) {
     this.props.insertStake(val, id);
@@ -27,6 +31,11 @@ class Betslip extends React.Component {
    removeAllHandler(){
      this.props.removeAll();
         }
+  
+  removeBetHandler(event){
+     console.log(event,'*********')
+     this.props.removeBet(event);
+  }
 
   render() {
     return (
@@ -53,6 +62,8 @@ class Betslip extends React.Component {
                       changeReturn={this.changeReturn}
                       loss={item.loss}
                       win={item.win}
+                      removeBetHandler = {this.removeBetHandler}
+                  
       
       
                     />
@@ -129,9 +140,12 @@ const mapDispatchToProps = dispatch => ({
   postBets: bets => {
     dispatch(postBets(bets));
   },
-    removeAll: () => {
-        dispatch(removeAll());
-      }
+  removeAll: () => {
+    dispatch(removeAll());
+  },
+  removeBet: (id) => {
+    dispatch(removeBet(id));
+  }
 });
  
   export default connect(mapStateToProps,mapDispatchToProps)(Betslip);

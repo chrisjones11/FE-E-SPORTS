@@ -24,11 +24,17 @@ export const removeAll = () => ({
 });
 
 export const insertStake = ((stake, id) => {
-    console.log(id, 'its me')
     return {
     type: types.INSERT_STAKE,
     payload: stake,
     id: id
+    }
+});
+
+export const removeBet = ((id) => {
+    return {
+    type: types.REMOVE_BET,
+    payload:id
     }
 });
 
