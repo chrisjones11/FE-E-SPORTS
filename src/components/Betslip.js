@@ -1,4 +1,3 @@
-
 import React from "react";
 import Cardform from "./Cardform";
 import "./Betslip.css";
@@ -6,8 +5,12 @@ import { connect } from "react-redux";
 import { insertStake } from "../actions/betslip";
 import { placeBets } from "../actions/postBets";
 import postBets from "../actions/postBets";
-import {removeAll} from '../actions/betslip';
+
+import { removeAll } from "../actions/betslip";
+import fetchBetslipData from "../actions/betslip";
 import {removeBet} from '../actions/betslip';
+
+
 
 
 class Betslip extends React.Component {
@@ -29,8 +32,14 @@ class Betslip extends React.Component {
     this.props.placeBets(bets);
     this.props.postBets(bets);
   }
-  removeAllHandler(){
-     this.props.removeAll();
+
+  removeAllHandler() {
+    this.props.removeAll();
+  }
+
+  componentDidMount() {
+    this.props.fetchBetslipData();
+
   }
 
   removeBetHandler(BetId) {
@@ -62,11 +71,12 @@ class Betslip extends React.Component {
                       changeReturn={this.changeReturn}
                       loss={item.loss}
                       win={item.win}
+
                       removeBetHandler = {this.removeBetHandler} 
+
                     />
                   </div>
-
-             </div>
+                </div>
               );
             })}
             <div className="row">
@@ -76,8 +86,15 @@ class Betslip extends React.Component {
             </div>
             <div className="row">
               <div className="col-6 removealldiv">
-                <a className="btn btn-default btn-work removeall" href="#" onClick={this.removeAllHander}> Remove All </a>
-                  </div>
+                <a
+                  className="btn btn-default btn-work removeall"
+                  href="#"
+                  onClick={this.removeAllHander}
+                >
+                  {" "}
+                  Remove All{" "}
+                </a>
+              </div>
               <div className="col-6">
                 <a
                   className="btn btn-default btn-placebets"
@@ -110,19 +127,19 @@ class Betslip extends React.Component {
                     />
                   </div>
                 </div>
-              )
+              );
             })}
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
 const mapStateToProps = state => ({
   toBePlaced: state.betslip.toBePlaced,
-  totalBet:state.betslip.totalBet,
-  activeBets: state.betslip.data.activeBets,
+  totalBet: state.betslip.totalBet,
+  activeBets: state.betslip.activeBets,
   loading: state.betslip.loading,
   error: state.betslip.error
 });
@@ -140,9 +157,14 @@ const mapDispatchToProps = dispatch => ({
   removeAll: () => {
     dispatch(removeAll());
   },
+
+  fetchBetslipData: () => {
+    dispatch(fetchBetslipData());
+  },
   removeBet: (id) => {
     dispatch(removeBet(id));
+
   }
 });
- 
-  export default connect(mapStateToProps,mapDispatchToProps)(Betslip);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Betslip);
