@@ -93,7 +93,9 @@ export default (prevState = getInitialState(), action) => {
         newState = Object.assign({}, prevState)
         for (var i=0; i<newState.toBePlaced.length; i++) {
           if (newState.toBePlaced[i].BetId == action.payload) {
-            newState.toBePlaced = newState.toBePlaced.slice(0, i).concat(newState.toBePlaced.slice(i+1))
+            var arr1 = newState.toBePlaced.slice(0, i)
+            var arr2 = newState.toBePlaced.slice(i+1)
+            newState.toBePlaced =  arr1.concat(arr2)
           }
         }
         return newState;

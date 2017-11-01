@@ -41,6 +41,11 @@
 
 .navbutton {
     font-size: 2vw;
+    color: white;
+}
+
+.navbutton:hover {
+    color: #ff5733;
 }
 
 .navblock {

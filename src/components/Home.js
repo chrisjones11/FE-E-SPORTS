@@ -37,7 +37,7 @@ class Home extends React.Component {
             <p>LOL</p>
           </div>
           <div className='col-sm-4'>
-            <p>bla bla</p>
+            <p>CS:GO</p>
           </div>
        </div>
        <div className='row gamedisplay'>
