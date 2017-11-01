@@ -20,6 +20,7 @@ export const placeBets = bet => ({
 
 export default (bets) => {
   return dispatch => {
+    console.log('hello')
     dispatch(postBetslipDataRequest(bets));
     axios
       .post(`${API_URL}/placedBets`, {bets} )
