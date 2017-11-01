@@ -19,8 +19,8 @@ class Betslip extends React.Component {
     removeAllHandler(){
      this.props.removeAll();
         }
-
     render () {
+
       return (
          <div className="betslip-outer col-3">
             <div className='betslip row'>

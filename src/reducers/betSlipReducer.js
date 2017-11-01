@@ -34,10 +34,12 @@ export default (prevState = getInitialState(), action) => {
           newState.totalBet = 0;
           const arr = newState.toBePlaced
           for(var i=0; i< arr.length; i++){
-           newState.totalBet = newState.totalBet + Number(arr[i].Stake); 
-           if (arr[i].BetId === action.id){
-      arr[i].Stake = action.payload;
-      }
+            if (arr[i].BetId === action.id){
+              arr[i].Stake = action.payload;
+            }
+          }
+          for(var i=0; i< arr.length; i++){
+            newState.totalBet += Number(arr[i].Stake); 
           }
           return newState;
 
