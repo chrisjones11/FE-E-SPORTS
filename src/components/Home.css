@@ -89,5 +89,30 @@ td {
 }
 
 .upcomingtitle {
-  margin-top: 50px;
+  margin-top: 20px;
+}
+
+.upcomingimages {
+  width: 60vw;
+  margin: auto;
+  text-align: center;
+}
+.tourneyimage{
+  background: 50% 50% no-repeat; 
+  
+}
+
+
+.imagetext {
+  z-index: 100;
+  position: absolute;
+  margin-top: -450px;
+  margin-left: 105px;
+  width: 46vw;
+  background-color: rgba(255, 255, 255, 0.8);;
+
+}
+
+.slideimage {
+  width: 100%;
 }

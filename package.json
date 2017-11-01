@@ -5,6 +5,8 @@
   "dependencies": {
     "axios": "^0.17.0",
     "http": "0.0.0",
+    "nuka-carousel": "^3.0.0",
+    "pure-react-carousel": "^1.9.9",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-iframe": "^1.0.7",

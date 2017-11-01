@@ -16,7 +16,7 @@ class LiveGame extends React.Component {
             <NavLink exact to="/game">       
             <div className="row video">
                 <div className="col-12">
-                <Iframe width='200' height='100' url='https://www.youtube.com/embed/g9up0_VSlC8' frameborder='0' gesture='media' allowfullscreen></Iframe>
+                    <img className='thumbnail' src={this.props.thumbnail}/>
                 </div>
             </div> 
             <div className="row videotext">
@@ -29,19 +29,11 @@ class LiveGame extends React.Component {
                 {this.props.tournament_name}
                 </div>
             </div>
-            </NavLink>       
-               
-                
+            </NavLink>             
             
         </div>
     )   
   }
 }
-
-const iframe = () =>{
-    return {
-      __html: this.props.thumbnail
-    }
-  }
 
 export default LiveGame;
