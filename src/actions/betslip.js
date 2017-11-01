@@ -31,12 +31,12 @@ export const insertStake = ((stake, id) => {
     }
 });
 
-// export const removeBet = ((id) => {
-//     return {
-//     type: types.REMOVE_BET,
-//     payload:id
-//     }
-// });
+export const removeBet = ((id) => {
+    return {
+    type: types.REMOVE_BET,
+    payload:id
+    }
+});
 
 
 

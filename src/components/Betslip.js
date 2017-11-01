@@ -28,10 +28,10 @@ class Betslip extends React.Component {
     this.props.placeBets(bets);
     this.props.postBets(bets);
   }
-   removeAllHandler(){
+  removeAllHandler(){
      this.props.removeAll();
-        }
-  
+  }
+
  
   render() {
     return (
