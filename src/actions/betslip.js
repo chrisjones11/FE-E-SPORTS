@@ -31,25 +31,25 @@ export const insertStake = ((stake, id) => {
     }
 });
 
-export const removeBet = ((id) => {
-    return {
-    type: types.REMOVE_BET,
-    payload:id
-    }
-});
+// export const removeBet = ((id) => {
+//     return {
+//     type: types.REMOVE_BET,
+//     payload:id
+//     }
+// });
 
 
 
-export default () => {
-  return (dispatch) => {
-      dispatch(fetchBetslipDataRequest);
-          axios.get(`${API_URL}/betslip`)
-      .then ((res) => {
-          dispatch(fetchBetslipDataSuccess(res.data));
-          console.log(res.data)
-      })
-      .catch((error) => {
-          dispatch(fetchBetslipDataFailure(error.message));
-      })
-  }
-}
+// export default () => {
+//   return (dispatch) => {
+//       dispatch(fetchBetslipDataRequest);
+//           axios.get(`${API_URL}/betslip`)
+//       .then ((res) => {
+//           dispatch(fetchBetslipDataSuccess(res.data));
+//           console.log(res.data)
+//       })
+//       .catch((error) => {
+//           dispatch(fetchBetslipDataFailure(error.message));
+//       })
+//   }
+// }

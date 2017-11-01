@@ -89,20 +89,22 @@ export default (prevState = getInitialState(), action) => {
       newState.toBePlaced = [];
       return newState;
 
-      case types.REMOVE_BET:
-       newState = Object.assign({}, prevState)
-       newState.toBePlaced = prevState.toBePlaced.slice()
-       arr = newState.toBePlaced
-      for(var i=0; i< arr.length; i++){
-      if (arr[i].BetId === action.payload){
-        var sliced  = arr.slice(0,arr[i-1])
-        var slicy = arr.slice(arr[i+1])
-        newState.toBePlaced = sliced.concat(slicy)
-        console.log( newState.toBePlaced, '********')
-         }
+      // case types.REMOVE_BET:
+      //  newState = Object.assign({}, prevState)
+      //  newState.toBePlaced = prevState.toBePlaced.slice()
+      //  arr = newState.toBePlaced
+      // for(var i=0; i< arr.length; i++){
+      //   console.log(action.payload, 'action.payload')
+      // if (arr[i].BetId === action.payload){
+      //   var sliced  = arr.slice(0,arr[i-1])
+      //   console.log(sliced)
+      //   var slicy = arr.slice(arr[i+1])
+      //   newState.toBePlaced = sliced.concat(slicy)
+      //   console.log( newState.toBePlaced, '********')
+      //    }
 
-         return newState;
-      }
+      //    return newState;
+      // }
       
       
             
