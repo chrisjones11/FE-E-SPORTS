@@ -12,7 +12,7 @@ export const getInitialState = () => ({
       Stake: 0,
       Return: "Return",
       Odds: 4,
-      fraction:4/1,
+      fraction:'4/1',
       win:null,
       }
     ],
@@ -29,10 +29,10 @@ export default (prevState = getInitialState(), action) => {
   switch (action.type) {
       
           case types.INSERT_STAKE: 
-          const newState = Object.assign({}, prevState)
+          let newState = Object.assign({}, prevState)
           newState.toBePlaced = prevState.toBePlaced.slice()
           newState.totalBet = 0;
-          const arr = newState.toBePlaced
+          let arr = newState.toBePlaced
           for(var i=0; i< arr.length; i++){
             if (arr[i].BetId === action.id){
               arr[i].Stake = action.payload;
@@ -94,7 +94,4 @@ export default (prevState = getInitialState(), action) => {
   }
 }
 
-    default:
-      return prevState;
-  }
-};
+ 

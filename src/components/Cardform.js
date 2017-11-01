@@ -54,9 +54,8 @@ class Cardform extends React.Component {
                 </form>
               </div>
               <div className="col-6 returndiv">
-                <p className="return">
-                  Return:{this.props.stake * this.props.odds}
-                </p>
+                <p className="return"> Return: {this.props.stake * this.props.odds} </p>
+               
               </div>
             </div>
           </div>

@@ -60,10 +60,10 @@ class Betslip extends React.Component {
 
              </div>
               );
-            })};
+            })}
             <div className="row">
               <div className="col-12 totalbetdiv">
-                <p>TOTAL BET £5.00</p>
+                <p>TOTAL BET {this.props.totalBet}</p>
               </div>
             </div>
             <div className="row">
@@ -102,12 +102,12 @@ class Betslip extends React.Component {
                     />
                   </div>
                 </div>
-              );
-            })};
+              )
+            })}
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
 

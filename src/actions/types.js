@@ -18,6 +18,7 @@ export const INSERT_STAKE = 'INSERT_STAKE';
 export const CREATE_BET = 'CREATE_BET';
 export const REMOVE_ALL = 'REMOVE_ALL';
 export const UPDATE_TOTAL = 'UPDATE_TOTAL';
+export const PLACE_BETS = "PLACE_BETS";
 
 
 
