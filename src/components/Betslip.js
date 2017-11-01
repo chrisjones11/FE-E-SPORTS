@@ -114,7 +114,7 @@ class Betslip extends React.Component {
 const mapStateToProps = state => ({
   toBePlaced: state.betslip.toBePlaced,
   totalBet:state.betslip.totalBet,
-  activeBets: state.betslip.data.activeBets,
+  activeBets: state.betslip.activeBets,
   loading: state.betslip.loading,
   error: state.betslip.error
 });

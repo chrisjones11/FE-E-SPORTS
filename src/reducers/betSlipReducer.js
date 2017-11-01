@@ -3,23 +3,9 @@ import uid from "uid";
 
 export const getInitialState = () => ({
   loading: false,
-  toBePlaced: [
-    {
-      BetId: 1,
-      TeamName: "TeamName",
-      BettingMarket: "BettingMarket",
-      TournamentName: "TournamentName",
-      Stake: 0,
-      Return: "Return",
-      Odds: 4,
-      fraction:'4/1',
-      win:null,
-      }
-    ],
+  toBePlaced: [],
     totalBet: null,
-    data: {
-      activeBets:[]
-    },
+    activeBets:[],
       error: null
 });
 
@@ -27,7 +13,27 @@ export default (prevState = getInitialState(), action) => {
   console.log(action, "*****");
 
   switch (action.type) {
-      
+
+//////////////////////////////////////////////////////////////////
+    //      case types.POST_BETSLIP_DATA_REQUEST:
+    // return Object.assign({}, prevState, {
+    //     loading: true,
+    //     activeBets: [],
+    //     error: null
+    // });
+    //   case types.POST_BETSLIP_DATA_SUCCESS:
+    // return Object.assign({}, prevState, {
+    //     loading: false,
+    //     activeBets: action.payload,
+    //     error: null
+    // });
+    //     case types.POST_BETSLIP_DATA_FAILURE:
+    // return Object.assign({}, prevState, {
+    //     loading: false,
+    //     activeBets: [],
+    //     error: action.payload
+    // });
+////////////////////////////////////////////////////////////////////////
           case types.INSERT_STAKE: 
           let newState = Object.assign({}, prevState)
           newState.toBePlaced = prevState.toBePlaced.slice()
@@ -43,18 +49,20 @@ export default (prevState = getInitialState(), action) => {
           }
           return newState;
 
+////////////////////////////////////////////////////////////////////////////////////
+
           case types.CREATE_BET:
           let newbet = {
             BetId: uid(10),
+            IsActive: 'true',
             TeamName: 'TeamName',
             BettingMarket: 'BettingMarket',
             TournamentName: 'TournamentName',
             Stake: 0,
             Return: 'Return',
             Odds: 4,
-            fraction:4/1,
-            loss:null,
-            win:null,
+            fraction:'4/1',
+           win:'hey'
             }
           console.log(action.payload)
           if (Array.isArray(action.payload)) {console.log('firstblood or match duration')
@@ -69,29 +77,33 @@ export default (prevState = getInitialState(), action) => {
             newbet.BettingMarket = action.payload.team_name + ' to win';
             newbet.TournamentName = action.payload.match_id;
             newbet.Odds = action.payload.toWin.odd;
-            newbet.fraction = action.payload.toWin.farction;
+            newbet.fraction = action.payload.toWin.fraction;
             
           }
           return Object.assign({}, prevState, {
             toBePlaced: prevState.toBePlaced.concat(newbet)
           });
 
+/////////////////////////////////////////////////////////////////////////////
+
         case types.REMOVE_ALL:
           return Object.assign({}, prevState, {
             toBePlaced: []
           });
       
+//////////////////////////////////////////////////////////////////////////////////////
+
        case types.PLACE_BETS:
-      newState = Object.assign({}, prevState);
-      newState.data.activeBets = newState.data.activeBets.concat(
-        newState.toBePlaced
-      );
-      newState.toBePlaced = [];
-      return newState;
-            
+      return Object.assign({}, prevState, {
+      activeBets : prevState.activeBets.concat(prevState.toBePlaced),
+      toBePlaced :[]
+      })
+
+    
+/////////////////////////////////////////////////////////////////////////////            
       default: 
        return prevState;
   }
 }
 
- 
+ ////////////////////////////////////////////////////////////////////////////////
