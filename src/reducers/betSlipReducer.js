@@ -3,10 +3,12 @@ import uid from "uid";
 
 export const getInitialState = () => ({
   loading: false,
+
   toBePlaced: [],
   totalBet: null,
   activeBets: ["HELLO"],
   error: null
+
 });
 
 export default (prevState = getInitialState(), action) => {
@@ -67,6 +69,7 @@ export default (prevState = getInitialState(), action) => {
       }
       return newState;
 
+
     ////////////////////////////////////////////////////////////////////////////////////
 
     case types.CREATE_BET:
@@ -118,8 +121,23 @@ export default (prevState = getInitialState(), action) => {
       });
 
     /////////////////////////////////////////////////////////////////////////////
-    default:
-      return prevState;
+
+      case types.REMOVE_BET:
+        newState = Object.assign({}, prevState)
+        for (var i=0; i<newState.toBePlaced.length; i++) {
+          if (newState.toBePlaced[i].BetId == action.payload) {
+            var arr1 = newState.toBePlaced.slice(0, i)
+            var arr2 = newState.toBePlaced.slice(i+1)
+            newState.toBePlaced =  arr1.concat(arr2)
+          }
+        }
+        return newState;
+      
+      
+            
+      default: 
+       return prevState;
+
   }
 };
 
