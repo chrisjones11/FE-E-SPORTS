@@ -1,18 +1,18 @@
-import * as types from '../actions/types';
-import uid from 'uid'; 
+import * as types from "../actions/types";
+import uid from "uid";
 
 export const getInitialState = () => ({
-    loading: false,
-    toBePlaced: [{
+  loading: false,
+  toBePlaced: [
+    {
       BetId: 1,
-      TeamName: 'TeamName',
-      BettingMarket: 'BettingMarket',
-      TournamentName: 'TournamentName',
+      TeamName: "TeamName",
+      BettingMarket: "BettingMarket",
+      TournamentName: "TournamentName",
       Stake: 0,
-      Return: 'Return',
+      Return: "Return",
       Odds: 4,
       fraction:4/1,
-      loss:null,
       win:null,
       }
     ],
@@ -20,14 +20,14 @@ export const getInitialState = () => ({
     data: {
       activeBets:[]
     },
-    
-    error: null
-
+      error: null
 });
 
 export default (prevState = getInitialState(), action) => {
-  console.log(action,'*****')
+  console.log(action, "*****");
+
   switch (action.type) {
+      
           case types.INSERT_STAKE: 
           const newState = Object.assign({}, prevState)
           newState.toBePlaced = prevState.toBePlaced.slice()
@@ -80,9 +80,21 @@ export default (prevState = getInitialState(), action) => {
           return Object.assign({}, prevState, {
             toBePlaced: []
           });
+      
+       case types.PLACE_BETS:
+      newState = Object.assign({}, prevState);
+      newState.data.activeBets = newState.data.activeBets.concat(
+        newState.toBePlaced
+      );
+      newState.toBePlaced = [];
+      return newState;
             
       default: 
        return prevState;
   }
 }
 
+    default:
+      return prevState;
+  }
+};
