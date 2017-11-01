@@ -18,11 +18,11 @@ export const placeBets = bet => ({
   payload: bet
 });
 
-export default () => {
+export default (bets) => {
   return dispatch => {
-    dispatch(postBetslipDataRequest());
+    dispatch(postBetslipDataRequest(bets));
     axios
-      .post(`${API_URL}/placedBets`)
+      .post(`${API_URL}/placedBets`,{ bets })
       .then(res => {
         dispatch(postBetslipDataSuccess(res.data));
         console.log(res.data);
