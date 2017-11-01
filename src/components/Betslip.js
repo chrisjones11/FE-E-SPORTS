@@ -16,6 +16,7 @@ class Betslip extends React.Component {
     this.changeReturn = this.changeReturn.bind(this);
     this.handlePlacedBets = this.handlePlacedBets.bind(this);
     this.removeAllHander = this.removeAllHandler.bind(this);
+    this.removeBetHandler = this.removeBetHandler.bind(this);
    
 
   }
@@ -32,6 +33,9 @@ class Betslip extends React.Component {
      this.props.removeAll();
   }
 
+  removeBetHandler(BetId) {
+    this.props.removeBet(BetId)
+  }
  
   render() {
     return (
@@ -58,11 +62,7 @@ class Betslip extends React.Component {
                       changeReturn={this.changeReturn}
                       loss={item.loss}
                       win={item.win}
-                      removeBet = {this.props.removeBet}
-                      /* removeBetHandler = {this.removeBetHandler} */
-                  
-      
-      
+                      removeBetHandler = {this.removeBetHandler} 
                     />
                   </div>
 
@@ -139,11 +139,10 @@ const mapDispatchToProps = dispatch => ({
   },
   removeAll: () => {
     dispatch(removeAll());
+  },
+  removeBet: (id) => {
+    dispatch(removeBet(id));
   }
-
-  // removeBet: (id) => {
-  //   dispatch(removeBet(id));
-  // }
 });
  
   export default connect(mapStateToProps,mapDispatchToProps)(Betslip);

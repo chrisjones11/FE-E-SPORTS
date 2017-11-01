@@ -16,7 +16,7 @@ class Cardform extends React.Component {
     this.props.changeReturn(val, id);
   }
   handleClick(data){
-    console.log('in removeBetHandler', data)
+    this.props.removeBetHandler(data)
   }
   render() {
    
