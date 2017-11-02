@@ -1,6 +1,6 @@
 import * as types from "./types";
 import axios from "axios";
-const API_URL = "http://localhost:8080/api";
+const API_URL = "http://localhost:8081/api";
 
 export const fetchBetslipDataRequest = () => ({
   type: types.FETCH_BETSLIP_DATA_REQUEST

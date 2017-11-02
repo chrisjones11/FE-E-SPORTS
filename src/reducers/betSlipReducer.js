@@ -75,7 +75,8 @@ export default (prevState = getInitialState(), action) => {
     case types.CREATE_BET:
       let newbet = {
         BetId: uid(10),
-        IsActive: "true",
+        Active: true,
+        MatchId: 0,
         TeamName: "TeamName",
         BettingMarket: "BettingMarket",
         TournamentName: "TournamentName",
@@ -88,6 +89,7 @@ export default (prevState = getInitialState(), action) => {
       console.log(action.payload);
       if (Array.isArray(action.payload)) {
         console.log("firstblood or match duration");
+        newbet.MatchId = action.payload[0].match_id;
         newbet.TeamName = "Any";
         newbet.BettingMarket = action.payload[1];
         newbet.TournamentName = action.payload[0].match_id;
@@ -95,6 +97,7 @@ export default (prevState = getInitialState(), action) => {
         newbet.fraction = action.payload[0][action.payload[1]].fraction;
       } else {
         console.log("team to win");
+        newbet.MatchId = action.payload.match_id;
         newbet.TeamName = action.payload.team_name;
         newbet.BettingMarket = action.payload.team_name + " to win";
         newbet.TournamentName = action.payload.match_id;
