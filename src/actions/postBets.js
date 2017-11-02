@@ -1,6 +1,6 @@
 import * as types from "./types";
 import axios from "axios";
-const API_URL = "http://localhost:8080/api";
+const API_URL = "http://localhost:8081/api";
 
 export const postBetslipDataRequest = () => ({
   type: types.POST_BETSLIP_DATA_REQUEST
@@ -20,7 +20,7 @@ export const placeBets = bet => ({
 
 export default (bets) => {
   return dispatch => {
-    console.log('hello')
+   
     dispatch(postBetslipDataRequest(bets));
     axios
       .post(`${API_URL}/placedBets`, {bets} )
