@@ -16,6 +16,7 @@ class Account extends React.Component {
   }
 
   render() {
+    console.log(this, 'IN ACCOUNT')
     return (
       <div className = 'col-2 account'>
         <div className='row'>

@@ -34,6 +34,26 @@ export default (prevState = getInitialState(), action) => {
         error: action.payload
       });
 
+     //////////////////////////////////////////////////////////////
+        case types.FETCH_RESULT_DATA_REQUEST:
+          return Object.assign({}, prevState, {
+            loading: true,
+            activeBets: [],
+            error: null
+          });
+        case types.FETCH_RESULT_DATA_SUCCESS:
+          return Object.assign({}, prevState, {
+            loading: true,
+            activeBets: action.payload,
+            error: null
+          });
+        case types.FETCH_RESULT_DATA_FAILURE:
+          return Object.assign({}, prevState, {
+            loading: true,
+            activeBets: [],
+            error: action.payload
+          });
+
     //////////////////////////////////////////////////////////////////
     case types.POST_BETSLIP_DATA_REQUEST:
       return Object.assign({}, prevState, {

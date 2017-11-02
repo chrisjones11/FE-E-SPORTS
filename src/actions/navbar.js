@@ -13,6 +13,10 @@ export const fetchAccountDataFailure = (error) => ({
     type: types.FETCH_ACCOUNT_DATA_FAILURE,
     payload: error
 });
+export const updateBalance = (data) => ({
+  type: types.UPDATE_BALANCE,
+  payload: data
+});
 
 export default () => {
   return dispatch => {

@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { insertStake } from "../actions/betslip";
 import { placeBets } from "../actions/postBets";
 import postBets from "../actions/postBets";
-
+import {updateBalance} from '../actions/navbar';
 import { removeAll } from "../actions/betslip";
 import fetchBetslipData from "../actions/betslip";
 import {removeBet} from '../actions/betslip';
@@ -28,13 +28,20 @@ class Betslip extends React.Component {
   }
 
   handlePlacedBets() {
+    if (this.props.totalBet <= 0){
+      alert("ERROR: PLEASE ENTER AN AMOUT IN STAKE");
+      return;
+    }
     if (this.props.account.balance < this.props.totalBet) {
       alert("ERROR: INSUFFICENT FUNDS");
       return;
     }
     const bets = this.props.toBePlaced;
+    const subtract = this.props.totalBet;
+    this.props.updateBalance(subtract);
     this.props.placeBets(bets);
     this.props.postBets(bets);
+    
   }
 
   removeAllHandler() {
@@ -169,8 +176,10 @@ const mapDispatchToProps = dispatch => ({
   },
   removeBet: (id) => {
     dispatch(removeBet(id));
-}
-
+},
+  updateBalance: (data) => {
+    dispatch(updateBalance(data));
+  }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Betslip);

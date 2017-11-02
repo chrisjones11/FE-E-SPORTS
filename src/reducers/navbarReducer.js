@@ -17,6 +17,7 @@ export default (prevState = getInitialState(), action) => {
       case types.FETCH_ACCOUNT_DATA_REQUEST:
         return Object.assign({}, prevState, {
             login:true,
+            data: {},
             loading: true,
             error: null
         });
@@ -33,6 +34,11 @@ export default (prevState = getInitialState(), action) => {
             loading: false,
             error: action.payload
         });
+        case types.UPDATE_BALANCE:
+        let newState = Object.assign({}, prevState);
+        newState.data.balance = newState.data.balance - action.payload;
+        console.log(newState, '********NEWSTATE*******')
+        return newState;
       default: 
        return prevState;
   }
