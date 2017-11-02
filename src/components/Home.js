@@ -16,7 +16,6 @@ class Home extends React.Component {
     // this.props.fetchHome();
   }
   render() {
-  console.log(this);
     return (
       <div className="newsgame col-9">
       <div className='screening'>

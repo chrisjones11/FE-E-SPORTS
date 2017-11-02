@@ -6,7 +6,7 @@ export const getInitialState = () => ({
   loading: false,
   data:{ id:1,
     name:'Arpitha Patil',
-    balance: '£ 10'
+    balance: 10
   },
   error:null
 
@@ -18,7 +18,6 @@ export default (prevState = getInitialState(), action) => {
         return Object.assign({}, prevState, {
             login:true,
             loading: true,
-            data: [],
             error: null
         });
       case types.FETCH_ACCOUNT_DATA_SUCCESS:
@@ -32,7 +31,6 @@ export default (prevState = getInitialState(), action) => {
         return Object.assign({}, prevState, {
             login:true,
             loading: false,
-            data: [],
             error: action.payload
         });
       default: 

@@ -25,7 +25,7 @@ export default (bets) => {
     axios
       .post(`${API_URL}/placedBets`, {bets} )
       .then(res => {
-        dispatch(postBetslipDataSuccess('sucess'));
+        dispatch(postBetslipDataSuccess(res.data));
       
       })
       .catch(error => {

@@ -16,7 +16,6 @@ class Account extends React.Component {
   }
 
   render() {
-    console.log(this.props, 'hello i am here')
     return (
       <div className = 'col-2 account'>
         <div className='row'>

@@ -28,6 +28,10 @@ class Betslip extends React.Component {
   }
 
   handlePlacedBets() {
+    if (this.props.account.balance < this.props.totalBet) {
+      alert("ERROR: INSUFFICENT FUNDS");
+      return;
+    }
     const bets = this.props.toBePlaced;
     this.props.placeBets(bets);
     this.props.postBets(bets);
@@ -47,6 +51,7 @@ class Betslip extends React.Component {
   }
  
   render() {
+    console.log(this.props)
     return (
       <div className="betslip-outer col-3">
         <div className="betslip row">
@@ -80,7 +85,7 @@ class Betslip extends React.Component {
               );
             })}
             <div className="row">
-              <div className="col-12 totalbetdiv">
+              <div className="col-8 totalbetdiv">
                 <p>TOTAL BET {this.props.totalBet}</p>
               </div>
             </div>
@@ -141,7 +146,8 @@ const mapStateToProps = state => ({
   totalBet: state.betslip.totalBet,
   activeBets: state.betslip.activeBets,
   loading: state.betslip.loading,
-  error: state.betslip.error
+  error: state.betslip.error,
+  account: state.navbar.data,
 });
 
 const mapDispatchToProps = dispatch => ({
