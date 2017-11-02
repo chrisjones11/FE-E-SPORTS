@@ -13,7 +13,7 @@ class Game extends React.Component {
       <div className="title">
         <div className="row " >
           <div className="col-sm-12">
-            <h1>Team A v/s Team B - NorthCoders Invitational </h1>
+            <h1>EG as Radiant v/s LGD as Dire - NorthCoders Invitational </h1>
             <p>Go for a Bet!!!</p>
           </div>
         </div>

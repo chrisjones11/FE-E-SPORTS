@@ -3,7 +3,8 @@ import './Home.css';
 import LiveGame from './LiveGame';
 import {connect} from 'react-redux';
 import fetchHome from '../actions';
-
+import createReactClass from 'create-react-class';
+import Carousel from 'nuka-carousel';
 
 
 class Home extends React.Component {
@@ -21,7 +22,17 @@ class Home extends React.Component {
       <div className='screening'>
         <div className="row slideshow">
           <div className="col-12">
-            <img className="homeimg" src="https://i.ytimg.com/vi/MzAvNmUn4q0/maxresdefault.jpg"></img>
+          <Carousel autoplay='true'>
+            {this.props.data.newsStories.map(story => {
+              return (
+                <div>
+                <img className="slideimage"src={story.imageUrl}/>
+                <h4 className='imagetext'>{story.headline}</h4>
+                </div>
+              )
+            })}
+      
+      </Carousel>
           </div>
         </div>
         <div className="row gamedisplayheading">
@@ -55,37 +66,30 @@ class Home extends React.Component {
         </div>
         <div className='row'>
           <div className="col-sm-12 upcomingtitle">
-            <p>Upcoming Tournments</p>
+            <h1>Upcoming Tournments</h1>
           </div>
-          <div className="row">
-            <div className='col-12'>
-              <table className="upcomingtable">
-                <tbody>
-                <tr className="upcomingtable">
-                  <td className="upcomingtable">
-                  <img className="upcomingimg1" src='http://res.cloudinary.com/diohwb5lp/image/upload/v1508865956/dota_upm_n4cvol.jpg'/>
-                  </td>
-                  <td className="upcomingtable">
-                  <img className="upcomingimg3" src='http://res.cloudinary.com/diohwb5lp/image/upload/v1508865956/dota_upm_n4cvol.jpg'/>
-                  </td>
-                  <td className="upcomingtable">
-                  <img className="upcomingimg2" src='http://res.cloudinary.com/diohwb5lp/image/upload/v1508865956/dota_upm_n4cvol.jpg'/>
-                  </td>
-                </tr>
-                <tr className="upcomingtable">
-                  <td className="upcomingtable">
-                  <img className="upcomingimg1" src='http://res.cloudinary.com/diohwb5lp/image/upload/v1508865956/dota_upm_n4cvol.jpg'/>
-                  </td>
-                  <td className="upcomingtable">
-                  <img className="upcomingimg3" src='http://res.cloudinary.com/diohwb5lp/image/upload/v1508865956/dota_upm_n4cvol.jpg'/>
-                  </td>
-                  <td className="upcomingtable">
-                  <img className="upcomingimg2" src='http://res.cloudinary.com/diohwb5lp/image/upload/v1508865956/dota_upm_n4cvol.jpg'/>
-                  </td>
-                </tr>
-                </tbody>
-              </table>
-            </div>
+          <div className="row upcomingimages">
+          {this.props.data.upcomingTourneys.map((tourney) => {
+            {var divStyle = {
+              backgroundImage: 'url('+ tourney.tournament_image +')',
+              width: '100px',
+              height: '100px',
+            }}
+              return (
+                <div className='col-sm-4' key={tourney._id}>
+                  <div className='row'>
+                    <div style={divStyle} className="col-12 tourneyimage">
+                    </div>
+                  </div>
+                  <div className='row'>
+                    <div className="col-12">
+                      <p>{tourney.tournament_name}</p>
+                    </div>
+                  </div>
+                </div>
+              ) 
+            })} 
+          
           </div>
           
          
