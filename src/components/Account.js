@@ -1,7 +1,7 @@
 import './Navbar.css'
 import React from 'react';
 import {connect} from 'react-redux';
-// import fetchAccount from '../actions/navbar'
+import fetchAccount from '../actions/navbar'
 
 
 class Account extends React.Component {
@@ -11,7 +11,7 @@ class Account extends React.Component {
   }
 
   loginHandler(event){
-  //  this.props.fetchAccount(event);
+   this.props.fetchAccount(event);
    this.toggleFormDisplay();
   }
 
@@ -59,14 +59,14 @@ const mapStateToProps = state => ({
 
 });
 
-// const mapDispatchToProps = dispatch => ({
-//   fetchAccount: () => {
-//     dispatch(fetchAccount());
-//   }
-// })
+const mapDispatchToProps = dispatch => ({
+  fetchAccount: () => {
+    dispatch(fetchAccount());
+  }
+})
 
 
-export default connect(mapStateToProps)(Account);
+export default connect(mapStateToProps,mapDispatchToProps)(Account);
 
 
 

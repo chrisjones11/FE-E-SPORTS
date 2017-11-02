@@ -1,6 +1,6 @@
 import * as types from './types';
 import axios from 'axios';
-const API_URL = 'http://localhost:8080/api';
+const API_URL = 'http://localhost:8081/api';
 
 export const fetchAccountDataRequest = () => ({
     type: types.FETCH_ACCOUNT_DATA_REQUEST
@@ -14,16 +14,16 @@ export const fetchAccountDataFailure = (error) => ({
     payload: error
 });
 
-// export default () => {
-//   return dispatch => {
-//     dispatch(fetchAccountDataRequest);
-//     axios
-//       .get(`${API_URL}/userdata`)
-//       .then(res => {
-//         dispatch(fetchAccountDataSuccess(res.data));
-//       })
-//       .catch(error => {
-//         dispatch(fetchAccountDataFailure(error.message));
-//       });
-//   };
-// };
+export default () => {
+  return dispatch => {
+    dispatch(fetchAccountDataRequest);
+    axios
+      .get(`${API_URL}/user`)
+      .then(res => {
+        dispatch(fetchAccountDataSuccess(res.data));
+      })
+      .catch(error => {
+        dispatch(fetchAccountDataFailure(error.message));
+      });
+  };
+};
