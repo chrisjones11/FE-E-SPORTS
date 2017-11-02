@@ -141,9 +141,10 @@ export const getInitialState = () => ({
           "In less than a month we are getting the season’s first Major underway at ESL One Hamburg and the eight teams are ready to go. In the lead-up we’ve finalized our tournament schedule, as well as the details for the prize money distribution - take a look! In regards to the Bo3 grand finals - ESL One Hamburg itself was planned, scheduled and budgeted before the announcement of the 2017-18 Competitive Season and its Pro Circuit. As such it was structured as an eight team, single elimination tournament with the final two days being played inside the Barclaycard Arena in Hamburg. On top of the one million Dollar prize pool, the players are of course also competing for the valuable Pro Circuit points, which are needed to qualify for TI8 down the line. 1500 of those are up for grabs at ESL One Hamburg and only the top four teams will get a share of the spoils.",
         "_id": "59f1bad413d4fc3457b02ee7",
         "__v": 0
-      }]
+      }],
+      
     },
-
+    
   
     error: null
 });

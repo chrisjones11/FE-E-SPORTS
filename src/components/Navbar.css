@@ -14,14 +14,16 @@
 }
 .login{
     text-align: center;
-    margin-left: -40px;
+   
     
 }
 
 .signup{
-    text-align: center;
-    margin-right: -40px;
-    
+    text-align: center;   
+}
+
+.account {
+    margin-right: 20px;
 }
 
  .signinbtn {

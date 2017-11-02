@@ -1,10 +1,23 @@
 import React from 'react';
 import './Navbar.css';
 import {NavLink} from 'react-router-dom';
+import Account from './Account'
+
 
 
 class Navbar extends React.Component {
+    constructor(props){
+        super(props);
+    }
+    componentDidMount() {
+          // this.props.fetchAccount();
+          
+    }
+
+   
+
   render() {
+
     return (
         <div className="navigation ">
             <nav className="navbar navbar-toggleable-md navbar-light bg-faded row">
@@ -24,12 +37,9 @@ class Navbar extends React.Component {
                     </div>
                     </div>
                 </div>
-                <div className="col-1 signup">
-                    <a className="btn btn-default btn-work signinbtn" href="#">Sign Up</a>
-                </div>
-                <div className="col-1 login">
-                    <a className="btn btn-default btn-work signinbtn" href="#">Login</a>
-                </div>
+                
+                    <Account />
+                
             </nav>
             
                     
@@ -42,4 +52,7 @@ class Navbar extends React.Component {
   }
 }
 
-export default Navbar;
+
+  
+  export default Navbar;
+  

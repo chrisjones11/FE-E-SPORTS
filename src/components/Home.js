@@ -105,7 +105,8 @@ class Home extends React.Component {
 const mapStateToProps = state => ({
   data: state.home.data,
   loading: state.home.loading,
-  error: state.home.error
+  error: state.home.error,
+
 });
 
 const mapDispatchToProps = dispatch => ({
