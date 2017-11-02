@@ -7,7 +7,7 @@ export const fetchBetslipDataRequest = () => ({
 });
 export const fetchBetslipDataSuccess = data => ({
   type: types.FETCH_BETSLIP_DATA_SUCCESS,
-  payload: data
+  payload: data.bets
 });
 export const fetchBetslipDataFailure = error => ({
   type: types.FETCH_BETSLIP_DATA_FAILURE,
@@ -30,10 +30,20 @@ export const removeBet = ((id) => {
     }
 });
 
+export const insertStake = ((stake, id) => {
+  console.log(id, 'its me')
+  return {
+  type: types.INSERT_STAKE,
+  payload: stake,
+  id: id
+  }
+});
+
 
 //account id as parameter?
 export default () => {
   return dispatch => {
+    console.log('hehehehy')
     dispatch(fetchBetslipDataRequest);
     axios
       .get(`${API_URL}/betslip`)

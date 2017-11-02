@@ -20,12 +20,13 @@ export const placeBets = bet => ({
 
 export default (bets) => {
   return dispatch => {
+    console.log('hello')
     dispatch(postBetslipDataRequest(bets));
     axios
       .post(`${API_URL}/placedBets`, {bets} )
       .then(res => {
-        dispatch(postBetslipDataSuccess(res.data.savedArr));
-        console.log(res.data.savedArr);
+        dispatch(postBetslipDataSuccess('sucess'));
+      
       })
       .catch(error => {
         dispatch(postBetslipDataFailure(error.message));

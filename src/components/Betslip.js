@@ -163,8 +163,8 @@ const mapDispatchToProps = dispatch => ({
   },
   removeBet: (id) => {
     dispatch(removeBet(id));
+}
 
-  }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Betslip);
