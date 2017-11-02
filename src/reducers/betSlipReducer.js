@@ -77,6 +77,7 @@ export default (prevState = getInitialState(), action) => {
         BetId: uid(10),
         Active: true,
         MatchId: 0,
+        bet_type:"winorloss",
         TeamName: "TeamName",
         BettingMarket: "BettingMarket",
         TournamentName: "TournamentName",
@@ -84,17 +85,22 @@ export default (prevState = getInitialState(), action) => {
         Return: "Return",
         Odds: 4,
         fraction: "4/1",
-        win: "hey"
+        low:0,
+        high:0,
+        win: "pending"
       };
       console.log(action.payload);
       if (Array.isArray(action.payload)) {
         console.log("firstblood or match duration");
+        newbet.bet_type = action.payload[0].bet_type;
         newbet.MatchId = action.payload[0].match_id;
         newbet.TeamName = "Any";
         newbet.BettingMarket = action.payload[1];
         newbet.TournamentName = action.payload[0].match_id;
         newbet.Odds = action.payload[0][action.payload[1]].odd;
         newbet.fraction = action.payload[0][action.payload[1]].fraction;
+        newbet.high = action.payload[0][action.payload[1]].high;
+        newbet.low = action.payload[0][action.payload[1]].low;
       } else {
         console.log("team to win");
         newbet.MatchId = action.payload.match_id;
