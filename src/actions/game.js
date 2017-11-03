@@ -17,7 +17,7 @@ export const fetchGameDataFailure = (error) => ({
 export default () => {
     return (dispatch) => {
         dispatch(fetchGameDataRequest);
-        axios.get(`${API_URL}/match/3516590405`)
+        axios.get(`${API_URL}/match/1`)
         .then ((res) => {
             dispatch(fetchGameDataSuccess(res.data));
             console.log(res.data)

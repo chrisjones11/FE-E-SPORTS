@@ -6,8 +6,8 @@ export const getInitialState = () => ({
 
   toBePlaced: [],
   totalBet: null,
-  activeBets: ["HELLO"],
-  returnedBets:['hey'],
+  activeBets: [],
+  returnedBets:[],
   error: null
 
 });
