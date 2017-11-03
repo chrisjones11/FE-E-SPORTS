@@ -5,136 +5,134 @@ export const getInitialState = () => ({
     data: {
         "durationStats": [
           {
-            "match_id": 3516590405,
-            "bet_type": "duration",
-            "_id": "59f34a5e14ee724abf414cdf",
+            "match_id": 0,
+            "bet_type": "",
+            "_id": "",
             "__v": 0,
             "over55min": {
-              "fraction": "8/1",
-              "odd": 8,
-              "low" : 3300, 
-              "high" : 10000000 
- },
+              "fraction": "",
+              "odd":0,
+              "low" : 0, 
+              "high" : 0 
+            },
             "between45and55min": {
-              "fraction": "4/1",
-              "odd": 4,
-              "low" : 2700, 
-              "high" : 3299 
+              "fraction": "",
+              "odd":0,
+              "low" : 0, 
+              "high" : 0 
 
             },
             "between30and45min": {
-              "fraction": "2/1",
-              "odd": 2,
-              "low" : 1800, 
-              "high" : 2699 
+              "fraction": "",
+              "odd": 0,
+              "low" :0, 
+              "high" : 0 
             },
             "between20and30min": {
-              "fraction": "4/1",
-              "odd": 4,
-              "low" : 1200, 
-              "high" : 1799 
+              "fraction": "",
+              "odd": 0,
+              "low" : 0, 
+              "high" : 0 
             },
             "lessthan20min": {
-              "fraction": "10/1",
-              "odd": 10,
-              "low" : 1200, 
-              "high" : 1799
+              "fraction": "",
+              "odd": 0,
+              "low" : 0, 
+              "high" : 0
             }
           }
         ],     
 
         "firstBloodTimes": [
           {
-            "match_id": 3516590405,
-            "bet_type": "first_blood",
-            "_id": "59f34a5e14ee724abf414cde",
+            "match_id": 0,
+            "bet_type": "",
+            "_id": "",
             "__v": 0,
             "over10min": {
-              "fraction": "10/1",
-              "odd": 10,
-              "low" : 599, 
-              "high" : 100000 
+              "fraction": "",
+              "odd": 0,
+              "low" : 0, 
+              "high" : 0 
             },
             "between5and10min": {
-              "fraction": "4/1",
-              "odd": 4,
-              "low" : 300, 
-              "high" : 599
+              "fraction": "",
+              "odd":0,
+              "low" : 0, 
+              "high" : 0
             },
             "between3and5min": {
-              "fraction": "2/1",
-              "odd": 2,
-              "low" : 180, 
-              "high" : 299 
+              "fraction": "",
+              "odd":0,
+              "low" : 0, 
+              "high" : 0 
 
             },
             "between1and3min": {
-              "fraction": "4/1",
-              "odd": 4,
-              "low" : 60, 
-              "high" : 179
+              "fraction": "",
+              "odd": 0,
+              "low" : 0, 
+              "high" : 0
             },
             "lessthan1min": {
-              "fraction": "5/1",
-              "odd": 5,
+              "fraction": "",
+              "odd": 0,
               "low" : 0, 
-              "high" : 59
+              "high" : 0
             }
           }
         ],
    
         "winOrLossesStats": [
           {
-            "match_id": 3516590405,
-            "team_name": "EG",
-            "side": "radiant",
-            "_id": "59f34a5e14ee724abf414ce0",
+            "match_id": 0,
+            "team_name": "",
+            "side": "",
+            "_id": "",
             "__v": 0,
             "toLose": {
-              "fraction": "2/1",
-              "odd": 2
+              "fraction": "",
+              "odd": 0
             },
             "toWin": {
-              "fraction": "2/1",
-              "odd": 2
+              "fraction": "",
+              "odd": 0
             }
           },
           {
-            "match_id": 3516590405,
-            "team_name": "LGD",
-            "side": "dire",
-            "_id": "59f34a5e14ee724abf414ce1",
+            "match_id": 0,
+            "team_name": "",
+            "side": "",
+            "_id": "",
             "__v": 0,
             "toLose": {
-              "fraction": "2/1",
-              "odd": 2
+              "fraction": "",
+              "odd": 0
             },
             "toWin": {
-              "fraction": "2/1",
-              "odd": 2
+              "fraction": "",
+              "odd": 0
             }
           }
         ],
-        "pregamesStats": [
-          {
-            "team_name": "LGD-GAMING",
-            "total_wins": 801,
-            "total_losses": 558,
-            "team_rating": "1380.6",
-            "team_id": 15,
-            "_id": "59f34a5e14ee724abf414cea",
-            "__v": 0
-          },
-          {
-            "team_name": "Evil Geniuses",
-            "total_wins": 751,
-            "total_losses": 469,
-            "team_rating": "1308.22",
-            "team_id": 39,
-            "_id": "59f34a5e14ee724abf414ceb",
-            "__v": 0
-          }
-        ]
+        "pregamesStats": [ {
+          "team_name": "",
+          "total_wins": 0,
+          "total_losses": 0,
+          "team_rating": "",
+          "team_id": 0,
+          "_id": "",
+          "__v": 0
+        },
+        {
+          "team_name": " ",
+          "total_wins": 0,
+          "total_losses": 0,
+          "team_rating": "",
+          "team_id": 0,
+          "_id": "",
+          "__v": 0
+        }]
       },
     error: null
 });

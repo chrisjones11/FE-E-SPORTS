@@ -20,7 +20,7 @@ export default () => {
   return dispatch => {
     dispatch(fetchResultDataRequest);
     axios
-      .get(`${API_URL}/result/1`)
+      .get(`${API_URL}/results/3516590405`)
       .then(res => {
         dispatch(fetchResultDataSuccess(res.data));
       })

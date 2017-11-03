@@ -7,6 +7,11 @@ import "./Game.css"
 
 
 class Game extends React.Component {
+
+    componentDidMount() {
+    this.props.fetchGame();
+  }
+
   render() {
     return (
       <div className="newsgame col-9">
