@@ -1,39 +1,37 @@
 .newsgame {
-    
-    margin:auto;  
-    margin-top: 15vh;
+  margin: auto;
+  margin-top: 15vh;
 }
 
 .betslip-outer {
-    margin-top: 15vh;
-    position: relative;
-    font-family: 'Russo One', sans-serif;
+  margin-top: 15vh;
+  position: relative;
+  font-family: "Russo One", sans-serif;
 }
+
 .btn{
     color:#ff5733;
     background-color:white;
 
 }
-a.btn-placebet:hover{
-    color:#707070;
+a.btn-placebet:hover {
+  color: #707070;
 }
-.sliptitle{
-    color:white; 
+.sliptitle {
+  color: white;
 }
 
 .betslip {
-    background-color:#b8b8b8;
-    text-align: center;
-    position: fixed;
-    
+  background-color: #b8b8b8;
+  text-align: center;
+  position: fixed;
 }
-.slipheading{
-    background-color: #ff5733; 
-
+.slipheading {
+  background-color: #ff5733;
 }
 
 .unplaced-bet {
-    background-color: #b8b8b8;
+  background-color: #b8b8b8;
 }
 
 .stake {
@@ -72,12 +70,12 @@ a.btn-placebet:hover{
     
 
     
-}
-.cardformdiv p{
- margin-bottom: 5px;
 
-    
 }
+.crossbtndiv {
+  padding: 0px;
+}
+
 .oddsdiv{
 
 text-align: right;
@@ -133,3 +131,4 @@ font-size: 20px;
 .check{
     background: blue;
 }
+

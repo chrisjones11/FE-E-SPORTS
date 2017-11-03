@@ -1,11 +1,12 @@
 import React from "react";
 import Cardform from "./Cardform";
+import Cardform2 from "./Cardform2";
 import "./Betslip.css";
 import { connect } from "react-redux";
 import { insertStake } from "../actions/betslip";
 import { placeBets } from "../actions/postBets";
 import postBets from "../actions/postBets";
-
+import {updateBalance} from '../actions/navbar';
 import { removeAll } from "../actions/betslip";
 import fetchBetslipData from "../actions/betslip";
 import {removeBet} from '../actions/betslip';
@@ -28,13 +29,20 @@ class Betslip extends React.Component {
   }
 
   handlePlacedBets() {
+    if (this.props.totalBet <= 0){
+      alert("ERROR: PLEASE ENTER AN AMOUT IN STAKE");
+      return;
+    }
     if (this.props.account.balance < this.props.totalBet) {
       alert("ERROR: INSUFFICENT FUNDS");
       return;
     }
     const bets = this.props.toBePlaced;
+    const subtract = this.props.totalBet;
+    this.props.updateBalance(subtract);
     this.props.placeBets(bets);
     this.props.postBets(bets);
+    
   }
 
   removeAllHandler() {
@@ -134,6 +142,30 @@ class Betslip extends React.Component {
                 </div>
               );
             })}
+                <div className="row activebetdiv ">
+              <p className="activebet">RETURNED BETS</p>
+            </div>
+
+            {this.props.returnedBets.map(item => {
+              return (
+                <div className="unplaced-bets row">
+                  <div className="col-12 ">
+                    <Cardform2
+                      BetId={item.BetId}
+                      teamName={item.TeamName}
+                      bettingMarket={item.BettingMarket}
+                      tournamentName={item.TournamentName}
+                      odds={item.Odds}
+                      fraction={item.fraction}
+                      stake={item.Stake}
+                      changeReturn={this.changeReturn}
+                      loss={item.loss}
+                      win={item.win}
+                    />
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
@@ -143,6 +175,7 @@ class Betslip extends React.Component {
 
 const mapStateToProps = state => ({
   toBePlaced: state.betslip.toBePlaced,
+  returnedBets: state.betslip.returnedBets,
   totalBet: state.betslip.totalBet,
   activeBets: state.betslip.activeBets,
   loading: state.betslip.loading,
@@ -169,8 +202,10 @@ const mapDispatchToProps = dispatch => ({
   },
   removeBet: (id) => {
     dispatch(removeBet(id));
-}
-
+},
+  updateBalance: (data) => {
+    dispatch(updateBalance(data));
+  }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Betslip);

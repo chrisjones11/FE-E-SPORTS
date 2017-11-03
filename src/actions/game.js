@@ -1,6 +1,6 @@
 import * as types from './types';
 import axios from 'axios';
-const API_URL = 'http://localhost:8081/api';
+const API_URL = 'http://localhost:8080/api';
 
 export const fetchGameDataRequest = () => ({
     type: types.FETCH_GAME_DATA_REQUEST
@@ -17,7 +17,7 @@ export const fetchGameDataFailure = (error) => ({
 export default () => {
     return (dispatch) => {
         dispatch(fetchGameDataRequest);
-        axios.get(API_URL)
+        axios.get(`${API_URL}/match/1`)
         .then ((res) => {
             dispatch(fetchGameDataSuccess(res.data));
             console.log(res.data)

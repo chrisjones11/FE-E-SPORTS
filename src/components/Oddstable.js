@@ -8,7 +8,8 @@ import fetchAccount from '../actions/navbar'
 class Oddstable extends React.Component {
     constructor(props) {
         super(props);
-        this.handleClick = this.handleClick.bind(this)
+        this.handleClick = this.handleClick.bind(this);
+        this.resultHandler = this.resultHandler.bind(this)
       }
     handleClick (odds) {
         this.props.createBet(odds)
@@ -18,12 +19,10 @@ class Oddstable extends React.Component {
         this.props.fetchAccount();
     }
     render () {
-      
-     
         return (
             <div className='col-10 oddstable'>
                 <div className='row'>
-                    <div className='col-12'>
+                    <div className='col-12' onClick={this.resultHandler}>
                         <h3>Latest Odds</h3>
                     </div>
                 </div>
@@ -145,14 +144,15 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
     createBet: (odds) => {
-        dispatch(createBet(odds));
-      },
-      fetchResult: () => {
-          dispatch(fetchResult());
-      },
-      fetchAccount: () => {
-          dispatch(fetchAccount());
-      }
+
+      dispatch(createBet(odds));
+    },
+    fetchResult: () => {
+        dispatch(fetchResult());
+    },
+    fetchAccount: () => {
+        dispatch(fetchAccount());
+    }
   })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Oddstable);

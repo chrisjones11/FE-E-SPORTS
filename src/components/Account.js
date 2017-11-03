@@ -9,13 +9,18 @@ class Account extends React.Component {
     super(props);
     this.loginHandler = this.loginHandler.bind(this);
   }
+  
+  componentDidMount() {
+    this.props.fetchAccount();
+    }
 
   loginHandler(event){
-   this.props.fetchAccount(event);
+   this.props.fetchAccount();
    this.toggleFormDisplay();
   }
 
   render() {
+    console.log(this, 'IN ACCOUNT')
     return (
       <div className = 'col-2 account'>
         <div className='row'>

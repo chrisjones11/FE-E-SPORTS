@@ -1,6 +1,6 @@
 import * as types from './types';
 import axios from 'axios';
-const API_URL = 'http://localhost:8081/api';
+const API_URL = 'http://localhost:8080/api';
 
 export const fetchAccountDataRequest = () => ({
     type: types.FETCH_ACCOUNT_DATA_REQUEST
@@ -12,6 +12,10 @@ export const fetchAccountDataSuccess = (data) => ({
 export const fetchAccountDataFailure = (error) => ({
     type: types.FETCH_ACCOUNT_DATA_FAILURE,
     payload: error
+});
+export const updateBalance = (data) => ({
+  type: types.UPDATE_BALANCE,
+  payload: data
 });
 
 export default () => {

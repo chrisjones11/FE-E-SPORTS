@@ -6,7 +6,8 @@ export const getInitialState = () => ({
 
   toBePlaced: [],
   totalBet: null,
-  activeBets: ["HELLO"],
+  activeBets: [],
+  returnedBets:[],
   error: null
 
 });
@@ -33,6 +34,27 @@ export default (prevState = getInitialState(), action) => {
         activeBets: [],
         error: action.payload
       });
+
+     //////////////////////////////////////////////////////////////
+        case types.FETCH_RESULT_DATA_REQUEST:
+          return Object.assign({}, prevState, {
+            loading: true,
+            activeBets: [],
+            error: null
+          });
+        case types.FETCH_RESULT_DATA_SUCCESS:
+          return Object.assign({}, prevState, {
+            loading: true,
+            activeBets: [],
+            returnedBets: action.payload,
+            error: null
+          });
+        case types.FETCH_RESULT_DATA_FAILURE:
+          return Object.assign({}, prevState, {
+            loading: true,
+            returnedBets: [],
+            error: action.payload
+          });
 
     //////////////////////////////////////////////////////////////////
     case types.POST_BETSLIP_DATA_REQUEST:
