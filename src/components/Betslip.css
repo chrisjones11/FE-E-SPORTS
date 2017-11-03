@@ -65,6 +65,22 @@ a.btn-placebet:hover {
     background:url('../images/remove_img/remove_lgt.png');
     background-repeat: no-repeat;
 }
+
+
+.returncrossbtndiv{
+    width:50px;
+    height:50px;
+    padding: 0px;
+   
+    background-repeat: no-repeat;
+}
+.returncrossbtndiv:hover{
+    width:40px;
+    height:50px;
+    padding: 0px;
+   
+    background-repeat: no-repeat;
+}
 .cardformdiv{
     text-align:left;
     
@@ -126,6 +142,27 @@ font-size: 20px;
     overflow-y: scroll;
     max-height:70vh;
     
+}.crossbtn{
+    width:50px;
+    width:30%;
+    margin-top: 10px;
+    margin-right: 35px;
+    
+}
+
+.crossbtndiv{
+    width:50px;
+    height:50px;
+    padding: 0px;
+    background:url('../images/remove_img/remove_gry.png');
+    background-repeat: no-repeat;
+}
+.crossbtndiv:hover{
+    width:40px;
+    height:50px;
+    padding: 0px;
+    background:url('../images/remove_img/remove_lgt.png');
+    background-repeat: no-repeat;
 }
 
 .check{
