@@ -24,28 +24,37 @@ class Cardform extends React.Component {
       <div>
         <div className="row unplaced-bet">
           <div   className="col-3 crossbtndiv" onClick={this.handleClick.bind(null, this.props.BetId)}> 
-            <img
-              className="crossbtn"
-              src="http://res.cloudinary.com/diohwb5lp/image/upload/v1508943403/remove_blk_ss7nxx.png"
-            />
           </div>
-          <div className="col-6 cardformdiv">
+          <div className="col-9 cardformdiv">
+            <div className='row'>
+            <div className="col-12 ">
             <div className="row">
-              <div className="col-12">
-                <p>Team/Person Name:{this.props.teamName}</p>
+              <div className="col-6">
+                <p>Team:{this.props.teamName}</p>
               </div>
+              <div className="col-6 oddsdiv">
+                {this.props.fraction}
+             </div>
             </div>
             <div className="row">
               <div className="col-12">
-                <p>Betting Market:{this.props.bettingMarket}</p>
+                <p>{this.props.bettingMarket}</p>
               </div>
             </div>
-            <div className="row">
+            
+          </div>
+            </div>
+            <div className="row match-id">
               <div className="col-12">
-                <p>Tournament/Comp Name:{this.props.tournamentName}</p>
+                <p>Match id: {this.props.tournamentName}</p>
               </div>
             </div>
-            <div className="row">
+          </div>
+          
+          
+        </div>
+       
+        <div className="row">
               <div className="col-6 formdiv">
                 <form>
                   <input
@@ -58,16 +67,12 @@ class Cardform extends React.Component {
                 </form>
               </div>
               <div className="col-6 returndiv">
-                <p className="return"> Return: {this.props.stake * this.props.odds} </p>
-               
+                <div className='row'>
+                 
+                   <div className="col-6 return"> Return: </div><div className=' col-6 returnval'>£{this.props.stake * this.props.odds} </div>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="col-3 oddsdiv">
-            <p>ODDS:{this.props.odds}</p>
-            <p>{this.props.fraction}</p>
-          </div>
-        </div>
       </div>
     );
   }

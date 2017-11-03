@@ -72,6 +72,28 @@ export default (prevState = getInitialState(), action) => {
 
     ////////////////////////////////////////////////////////////////////////////////////
 
+    case types.FETCH_RESULT_DATA_REQUEST:
+    return Object.assign({}, prevState, {
+      loading: true,
+      activeBets: [],
+      error: null
+    });
+  case types.FETCH_RESULT_DATA_SUCCESS:
+    return Object.assign({}, prevState, {
+      loading: true,
+      activeBets: [],
+      returnedBets: action.payload,
+      error: null
+    });
+  case types.FETCH_RESULT_DATA_FAILURE:
+    return Object.assign({}, prevState, {
+      loading: true,
+      returnedBets: [],
+      error: action.payload
+    });
+
+  ////////////////////////////////////////////////////////////////////////////////////
+  
     case types.CREATE_BET:
       let newbet = {
         BetId: uid(10),
@@ -126,7 +148,8 @@ export default (prevState = getInitialState(), action) => {
     case types.PLACE_BETS:
       return Object.assign({}, prevState, {
         activeBets: prevState.activeBets.concat(prevState.toBePlaced),
-        toBePlaced: []
+        toBePlaced: [],
+        totalBet: 0
       });
 
     /////////////////////////////////////////////////////////////////////////////

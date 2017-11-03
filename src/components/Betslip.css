@@ -9,7 +9,7 @@
     position: relative;
     font-family: 'Russo One', sans-serif;
 }
-.btn-placebet{
+.btn{
     color:#ff5733;
     background-color:white;
 
@@ -46,17 +46,30 @@ a.btn-placebet:hover{
  margin-top: 10px;
 }
 .crossbtn{
+    width:50px;
     width:30%;
     margin-top: 10px;
     margin-right: 35px;
-
+    
 }
+
 .crossbtndiv{
-   padding: 0px;
+    width:50px;
+    height:50px;
+    padding: 0px;
+    background:url('../images/remove_img/remove_gry.png');
+    background-repeat: no-repeat;
+}
+.crossbtndiv:hover{
+    width:40px;
+    height:50px;
+    padding: 0px;
+    background:url('../images/remove_img/remove_lgt.png');
+    background-repeat: no-repeat;
 }
 .cardformdiv{
     text-align:left;
-    margin-left: -50px;
+    
 
     
 }
@@ -66,17 +79,32 @@ a.btn-placebet:hover{
     
 }
 .oddsdiv{
-text-align: right;
-font-size: 15px;
 
+text-align: right;
+font-size: 25px;
+
+}
+
+.match-id {
+    text-align: left;
 }
 
 .return{
-    margin-left: 50px;
+    width: 60px;
+    text-align: left;  
 }
 .returndiv{
- padding: 0px;
+    width: 100px;
+    padding: 0px;
+    font-size: 20px;
 }
+
+.returnval {
+    padding-right: 50px;
+    width: 10px;
+    font-size: 25px;
+}
+
 .removeall{
  
 background-color:#f0f0f0;
@@ -100,4 +128,8 @@ font-size: 20px;
     overflow-y: scroll;
     max-height:70vh;
     
+}
+
+.check{
+    background: blue;
 }
