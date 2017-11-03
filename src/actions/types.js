@@ -29,8 +29,3 @@ export const REMOVE_ALL = 'REMOVE_ALL';
 export const UPDATE_TOTAL = 'UPDATE_TOTAL';
 export const PLACE_BETS = 'PLACE_BETS';
 export const REMOVE_BET = 'REMOVE_BET';
-
-
-
-
-

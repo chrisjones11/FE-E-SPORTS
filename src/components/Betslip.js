@@ -100,7 +100,7 @@ class Betslip extends React.Component {
             <div className="row">
               <div className="col-6 removealldiv">
                 <a
-                  className="btn btn-default btn-work removeall"
+                  className="btn btn-default btn-work"
                   href="#"
                   onClick={this.removeAllHander}
                 >
@@ -110,7 +110,7 @@ class Betslip extends React.Component {
               </div>
               <div className="col-6">
                 <a
-                  className="btn btn-default btn-placebets"
+                  className="btn btn-default btn-work"
                   href="#"
                   onClick={this.handlePlacedBets}
                 >

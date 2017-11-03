@@ -30,10 +30,10 @@ class Navbar extends React.Component {
                         <NavLink className='navbutton' to="/game">live games</NavLink>
                     </div>
                     <div className="col-4 navbutton">
-                        upcoming
+                        <NavLink className='navbutton' to="/game">upcoming</NavLink>
                     </div>
                     <div className="col-4 navbutton">
-                        news
+                        <NavLink className='navbutton' to="/game">news</NavLink>
                     </div>
                     </div>
                 </div>

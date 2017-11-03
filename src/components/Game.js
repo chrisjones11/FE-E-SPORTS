@@ -25,7 +25,7 @@ class Game extends React.Component {
         {/* GET THE IFRAME VIDEO EMBEDS WORKING */}
         <div className="row gametitleimgcontainer">
           <div className="col-sm-12">
-            <img className="gametitleimg" src='http://res.cloudinary.com/diohwb5lp/image/upload/v1508778140/titlepage_image_lbtxjf.png'/>
+          <iframe width='800' height='470' src='https://www.youtube.com/embed/g9up0_VSlC8' frameborder='0' gesture='media' allowfullscreen></iframe>
           </div>
         </div>
         <div className="row">

@@ -1,3 +1,7 @@
+.oddstable {
+    width: 90%;
+    margin: auto;
+}
 .marketdiv {
     display: table;
     height: 50px;
@@ -8,6 +12,7 @@
 .textalign {
     display: table-cell;
     vertical-align: middle;
+    width: 100px;
 }
 
 .odds {

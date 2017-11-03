@@ -8,9 +8,11 @@
   position: relative;
   font-family: "Russo One", sans-serif;
 }
-.btn-placebet {
-  color: #ff5733;
-  background-color: white;
+
+.btn{
+    color:#ff5733;
+    background-color:white;
+
 }
 a.btn-placebet:hover {
   color: #707070;
@@ -33,58 +35,100 @@ a.btn-placebet:hover {
 }
 
 .stake {
-  width: 80px;
-  text-align: center;
+    width: 80px;
+    text-align: center;
 }
-.activebet {
-  font-size: 20px;
-  margin-left: 80px;
-  margin-top: 10px;
+.activebet{
+ font-size: 20px;
+ margin-left: 80px;
+ margin-top: 10px;
 }
-.crossbtn {
-  width: 30%;
-  margin-top: 10px;
-  margin-right: 35px;
+.crossbtn{
+    width:50px;
+    width:30%;
+    margin-top: 10px;
+    margin-right: 35px;
+    
+}
+
+.crossbtndiv{
+    width:50px;
+    height:50px;
+    padding: 0px;
+    background:url('../images/remove_img/remove_gry.png');
+    background-repeat: no-repeat;
+}
+.crossbtndiv:hover{
+    width:40px;
+    height:50px;
+    padding: 0px;
+    background:url('../images/remove_img/remove_lgt.png');
+    background-repeat: no-repeat;
+}
+.cardformdiv{
+    text-align:left;
+    
+
+    
+
 }
 .crossbtndiv {
   padding: 0px;
 }
-.cardformdiv {
-  text-align: left;
-  margin-left: -50px;
-}
-.cardformdiv p {
-  margin-bottom: 5px;
-}
-.oddsdiv {
-  text-align: right;
-  font-size: 15px;
+
+.oddsdiv{
+
+text-align: right;
+font-size: 25px;
+
 }
 
-.return {
-  margin-left: 50px;
-}
-.returndiv {
-  padding: 0px;
-}
-.removeall {
-  background-color: #f0f0f0;
-  color: black;
+.match-id {
+    text-align: left;
 }
 
-a.removeall:hover {
-  color: #b8b8b8;
+.return{
+    width: 60px;
+    text-align: left;  
 }
-.removealldiv {
-  text-align: center;
+.returndiv{
+    width: 100px;
+    padding: 0px;
+    font-size: 20px;
 }
-.totalbetdiv {
-  text-align: left;
-  margin-top: 15px;
-  font-size: 20px;
+
+.returnval {
+    padding-right: 50px;
+    width: 10px;
+    font-size: 25px;
 }
-.betmain {
-  box-shadow: -3px 3px 10px 5px #888888;
-  overflow-y: scroll;
-  max-height: 70vh;
+
+.removeall{
+ 
+background-color:#f0f0f0;
+color: black;
 }
+
+a.removeall:hover{
+    color: #b8b8b8;
+}
+.removealldiv{
+    text-align: center;
+}
+.totalbetdiv{
+text-align: left;
+margin-top: 15px;
+font-size: 20px;
+   
+}
+.betmain{
+    box-shadow: -3px 3px 10px 5px #888888;
+    overflow-y: scroll;
+    max-height:70vh;
+    
+}
+
+.check{
+    background: blue;
+}
+
