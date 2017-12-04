@@ -1,23 +1,44 @@
-# React Project Starter
+## Getting Started
 
-This starter project has everything you need to start writing React as fast as possible. 
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
 
-No need for configuration, works out of the box by installing dependencies and starting the development server with `npm start`.
+### Prerequisites
 
-Once you clone this project you can make it your own by removing the existing `.git` folder and initialising a new one.
+You will first need to install [this project](https://github.com/esports-northcoders/FE-E-SPORTS) and follow all the instructions. 
 
-```
-rm -rf .git
-git init
-git add .
-git commit -m 'Initial commit'
-```
+### Installing
 
-If you want to push this project to your GitHub account, create a new repository, copy its URL and add an `origin` remote:
+In order to install please run the following commands
 
 ```
-git remote add origin <your-repo-url>
-git push -u origin master
+git clone https://github.com/esports-northcoders/FE-E-SPORTS.git
+```
+then navigate inside the folder and run 
+```
+npm install
 ```
 
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+## Starting the application
+
+In order to run the application run the following command
+```
+npm start
+```
+Then the application should be accessible at http://localhost:9000.
+## Running the tests
+
+To run the tests run the following command
+```
+npm t
+```
+All the reducers and actions have been tested using mocha and chai.
+
+## Built With
+* [react](https://reactjs.org/)
+* [redux](https://redux.js.org/docs/introduction/)
+* [mocha](https://mochajs.org/)
+* [chai](http://chaijs.com/)
+* [bootstrap](https://getbootstrap.com/)
+
+
+
